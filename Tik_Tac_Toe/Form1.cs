@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tik_Tac_Toe
 {
-    public partial class Form1 : Form
+    public partial class mainForm : Form
     {
-        public Form1()
+        public mainForm()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace Tik_Tac_Toe
                 this.btns[i].Name = "btn" + i;
                 this.btns[i].Size = new System.Drawing.Size(50, 50);
                 this.btns[i].TabIndex = 0;
-                this.btns[i].Text = "Button " + i;
+                this.btns[i].Text =  i+"";
                 this.btns[i].UseVisualStyleBackColor = true;
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
             }
@@ -34,26 +34,23 @@ namespace Tik_Tac_Toe
             //Grid
             this.grid = new Grid();
 
+
+        }
+
+        private void updateInterface()
+        {
+            int[,] table = grid.getTable();
+            for(int i=0;i<9;i++)
+            {
+                btns[i].Text = table[i / 3, i % 3].ToString();
+            }
         }
 
         private void btn_Click(object sender, EventArgs e)
         {
-            (sender as System.Windows.Forms.Button).Text = " ";
-        }
-
-        private void btnSinglePlayer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            int index = int.Parse( (sender as Button).Name.Substring(3) );
+            grid.updateMove(index / 3, index % 3, 1);
+            updateInterface();
         }
 
     }

@@ -1,6 +1,6 @@
 ﻿namespace Tik_Tac_Toe
 {
-    partial class Form1
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -124,7 +124,7 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Time";
             // 
-            // Form1
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,15 +134,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "mainForm";
+            this.Text = "Tik Tac Toe";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.homePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-
-
 
         }
 
