@@ -8,11 +8,11 @@ namespace Tik_Tac_Toe
 {
     class Game
     {
-        private int[,] table;
+        protected int[,] table;
         private int nextPlayerId; // 1 or -1
-        private Player[] players = new Player[2];
+        protected Player[] players = new Player[2];
         public event EventHandler Update;
-        private int winner = 0;
+        protected int winner = 0;
 
         public Game()
         {
@@ -105,6 +105,11 @@ namespace Tik_Tac_Toe
             }
         }
 
+        //Mark the move of the playerId
+        protected void updateMove(int row, int col, int playerId)
+        {
+            table[row, col] = playerId;
+        }
 
         //Mark the move
         public bool updateMove(int row, int col)
@@ -112,7 +117,7 @@ namespace Tik_Tac_Toe
             if (table[row, col] != 0)
                 return false;
 
-            table[row, col] = nextPlayerId;
+            updateMove(row, col, nextPlayerId);
             nextPlayerId *= (-1);
             updatePointsAndCalculateWinner();
             callUpdate();
@@ -121,9 +126,8 @@ namespace Tik_Tac_Toe
 
         public void reset(bool full)
         {
-            winner = 0;
             table = new int[3, 3];
-            callUpdate();
+            winner = 0;
 
             //if it is a full reset clear the points also
             if (full)
@@ -131,6 +135,9 @@ namespace Tik_Tac_Toe
                 getPlayer(1).points = 0;
                 getPlayer(-1).points = 0;
             }
+
+            //Finally update Interface
+            callUpdate();
         }
 
         private void callUpdate()

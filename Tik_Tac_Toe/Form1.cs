@@ -15,7 +15,14 @@ namespace Tik_Tac_Toe
         public mainForm()
         {
             InitializeComponent();
+            InitializeGameComponent();
 
+        }
+
+
+
+        private void InitializeGameComponent()
+        {
             //Our Codes
             this.btns = new System.Windows.Forms.Button[9];
             for (int i = 0; i < 9; i++)
@@ -26,7 +33,7 @@ namespace Tik_Tac_Toe
                 this.btns[i].Name = "btn" + i;
                 this.btns[i].Size = new System.Drawing.Size(50, 50);
                 this.btns[i].TabIndex = 0;
-                this.btns[i].Text =  i+"";
+                this.btns[i].Text = i + "";
                 this.btns[i].UseVisualStyleBackColor = true;
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
             }
@@ -36,7 +43,7 @@ namespace Tik_Tac_Toe
             game.reset(true);
         }
 
-        private void updateInterface(object sender, EventArgs e)
+        private void updateInterface(object sender, EventArgs e) //To Ravindu: Improve this function
         {
             int[,] table = game.getTable();
             for(int i=0;i<9;i++)
@@ -44,15 +51,22 @@ namespace Tik_Tac_Toe
                 btns[i].Text = table[i / 3, i % 3].ToString();
             }
 
+            //Increase marks
             lblPlayer1.Text = game.getPlayer(-1).name + " has " + game.getPlayer(-1).points + " points " ;
             lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
 
-            if (game.getWinner() != 0) gameFinished();
+            // =0 game is going on | =1,-1 wins and =2 draw
+            gameFinished();
+
         }
 
-        private void gameFinished()
+        private void gameFinished() //To Ravindu
         {
             lblState.Text = "winner is " + game.getWinner();
+
+            //To Do - 
+            //      Disable grid,
+            //      show reset(Play again) button    
         }
 
         private void btn_Click(object sender, EventArgs e)
