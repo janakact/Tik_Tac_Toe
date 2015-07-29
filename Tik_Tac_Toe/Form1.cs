@@ -31,26 +31,47 @@ namespace Tik_Tac_Toe
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
             }
 
-            //Grid
-            this.grid = new Grid();
-
-
+            this.game = new Game();
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
         }
 
-        private void updateInterface()
+        private void updateInterface(object sender, EventArgs e)
         {
-            int[,] table = grid.getTable();
+            int[,] table = game.getTable();
             for(int i=0;i<9;i++)
             {
                 btns[i].Text = table[i / 3, i % 3].ToString();
             }
+
+            lblPlayer1.Text = game.getPlayer(-1).name + " has " + game.getPlayer(-1).points + " points " ;
+            lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
+
+            if (game.getWinner() != 0) gameFinished();
+        }
+
+        private void gameFinished()
+        {
+            lblState.Text = "winner is " + game.getWinner();
         }
 
         private void btn_Click(object sender, EventArgs e)
         {
-            int index = int.Parse( (sender as Button).Name.Substring(3) );
-            grid.updateMove(index / 3, index % 3, 1);
-            updateInterface();
+            int index = int.Parse( (sender as Button).Name.Substring(3) ); //Find the button clicked
+            game.updateMove(index / 3, index % 3);
+        }
+
+        private void btnSinglePlayer_Click(object sender, EventArgs e)
+        {
+            //Grid
+            this.game = new Game();
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            game.reset(false);
         }
 
     }

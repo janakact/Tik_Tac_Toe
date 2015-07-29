@@ -36,9 +36,11 @@
             this.btnMultiplayerOffline = new System.Windows.Forms.Button();
             this.btnSinglePlayer = new System.Windows.Forms.Button();
             this.gamePanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblState = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
             this.homePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,46 +99,65 @@
             this.gamePanel.Size = new System.Drawing.Size(218, 217);
             this.gamePanel.TabIndex = 1;
             // 
-            // label1
+            // lblPlayer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(400, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Player1 Wins";
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.Location = new System.Drawing.Point(400, 12);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(69, 13);
+            this.lblPlayer1.TabIndex = 2;
+            this.lblPlayer1.Text = "Player1 Wins";
             // 
-            // label2
+            // lblPlayer2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(400, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Player2";
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Location = new System.Drawing.Point(400, 44);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(42, 13);
+            this.lblPlayer2.TabIndex = 3;
+            this.lblPlayer2.Text = "Player2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(403, 161);
+            this.label3.Location = new System.Drawing.Point(400, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Time";
+            // 
+            // lblState
+            // 
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(403, 180);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(0, 13);
+            this.lblState.TabIndex = 5;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(403, 170);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 241);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.lblState);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPlayer2);
+            this.Controls.Add(this.lblPlayer1);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.homePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -152,10 +173,12 @@
         private System.Windows.Forms.Panel gamePanel;
         private System.Windows.Forms.Button[] btns;
         private System.Windows.Forms.Button btnStop;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPlayer1;
+        private System.Windows.Forms.Label lblPlayer2;
         private System.Windows.Forms.Label label3; //Buttons 
-        private Grid grid;
+        private Game game;
+        private System.Windows.Forms.Label lblState;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 
