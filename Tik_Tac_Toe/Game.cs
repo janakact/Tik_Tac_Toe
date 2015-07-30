@@ -105,7 +105,7 @@ namespace Tik_Tac_Toe
         {
             int newWinner = calculateWinner();
             //if Someone has win increase his points
-            if (newWinner != winner && newWinner != 0)
+            if (newWinner != winner && newWinner != 0 && newWinner!=2)
             {
                 winner = newWinner;
                 getPlayer(winner).points += 1;

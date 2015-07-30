@@ -58,18 +58,45 @@ namespace Tik_Tac_Toe
             lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
 
             // =0 game is going on | =1,-1 wins and =2 draw
-            gameFinished();
-
+            if (game.getWinner() != 0)
+            {
+                gameFinished();
+            }
         }
 
         private void gameFinished() //To Ravindu
         {
-            lblState.Text = "winner is " + game.getWinner();
+            //lblState.Text = "winner is " + game.getWinner();
 
             //To Do - 
             //      Disable grid,
-            //      show reset(Play again) button    
-        }
+            //      show reset(Play again) button 
+            if (game.getWinner() != 0)
+            {
+                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Start New Game? \n",
+                                                         "Game Result",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Information
+                                                          );
+                if (gameResult == DialogResult.Yes)
+                {
+                    game.reset(false);
+                }
+            }
+
+            else
+            {
+                DialogResult gameResult = MessageBox.Show("Game is Drawn \n \n Start New Game?",
+                                                         "Game Result",
+                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxIcon.Information
+                                                          );
+                if (gameResult == DialogResult.Yes)
+                {
+                    game.reset(false);
+                }
+            }
+          }
 
         private void btn_Click(object sender, EventArgs e)
         {
