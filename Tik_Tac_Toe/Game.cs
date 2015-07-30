@@ -134,7 +134,7 @@ namespace Tik_Tac_Toe
             return true;
         }
 
-        public void reset(bool full)
+        public virtual void reset(bool full)
         {
             table = new int[3, 3];
             winner = 0;

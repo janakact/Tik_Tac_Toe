@@ -14,7 +14,8 @@ namespace Tik_Tac_Toe
         public const int HardLevel = 2;
 
         //True if it is user's time to make a move
-        bool isUserChance; 
+        bool isUserChance;
+        bool userFirst;
         int userIndex;
         int difficulty;
 
@@ -22,6 +23,7 @@ namespace Tik_Tac_Toe
 
         public SinglePlayerGame(String playerName, int userIndex, int difficulty)
         {
+            userFirst = true;
             isUserChance = true;
             this.userIndex = userIndex;
             setPlayer(userIndex, new Player(playerName));
@@ -42,8 +44,6 @@ namespace Tik_Tac_Toe
             callUpdate();       //Update Interface
 
             updateAIMove();     //call an AI move
-            callUpdate();       //Update Interface
-            isUserChance = true;
             return true;
         }
 
@@ -71,7 +71,12 @@ namespace Tik_Tac_Toe
             if(highestQ!=-1)
             {
                 updateMove(move / 3, move % 3, userIndex * (-1));
+
+                callUpdate();       //Update Interface
+                isUserChance = true;
+
                 return true;
+
             }
             return false;
         }
@@ -122,6 +127,18 @@ namespace Tik_Tac_Toe
                 //clear and return
                 grid[move / 3, move % 3] = 0; 
                 return highest;
+            }
+        }
+
+        public override void reset(bool full)
+        {
+            base.reset(full);
+            isUserChance = userFirst;
+            userFirst = !userFirst;
+
+            if(!isUserChance)
+            {
+                updateAIMove();     //call an AI move
             }
         }
     }
