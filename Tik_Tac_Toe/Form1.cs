@@ -105,5 +105,12 @@ namespace Tik_Tac_Toe
            
         }
 
+        private void btnMultiplayerOffline_Click(object sender, EventArgs e)
+        {
+            game = new SinglePlayerGame("Me", 1, SinglePlayerGame.EasyLevel);
+            game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+        }
+
     }
 }

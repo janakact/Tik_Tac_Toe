@@ -81,6 +81,7 @@
             this.btnMultiplayerOffline.TabIndex = 1;
             this.btnMultiplayerOffline.Text = "Multiplayer (offline)";
             this.btnMultiplayerOffline.UseVisualStyleBackColor = true;
+            this.btnMultiplayerOffline.Click += new System.EventHandler(this.btnMultiplayerOffline_Click);
             // 
             // btnSinglePlayer
             // 
