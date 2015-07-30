@@ -38,20 +38,94 @@ namespace Tik_Tac_Toe
                 return false;
             //block doing another move
             isUserChance = false;
-
             updateMove(row, col, userIndex); //Mark the moves
+            callUpdate();       //Update Interface
 
-            callUpdate(); //Update Interface
-
-            //call an AI move
-
+            updateAIMove();     //call an AI move
+            callUpdate();       //Update Interface
+            isUserChance = true;
             return true;
         }
 
-        private void updateAIMove()
+        private bool updateAIMove()
         {
-            int[,] grid = table;
-            //
+            //Make a clone
+            int[,] grid = (int[,]) table.Clone();
+
+            int highestQ = -1;
+            int move = 0;
+            //Loop through and find the best move
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++ )
+                {
+                    if (grid[i,j] == 0)
+                    {
+                        int q = getMoveQuality(i * 3 + j, true, grid);
+                        if(q>highestQ)
+                        {
+                            highestQ = q;
+                            move = i * 3 + j;
+                        }
+                    }
+                }
+            if(highestQ!=-1)
+            {
+                updateMove(move / 3, move % 3, userIndex * (-1));
+                return true;
+            }
+            return false;
+        }
+
+
+        //Returns 0 = lose, 1=both, 2=win sure
+        private int getMoveQuality(int move, bool activeTurn, int[,] grid)
+        {
+            //Assume that grid[move] ==0 
+            if(activeTurn)      //If it is a AI move
+            {
+                grid[move / 3, move % 3] = userIndex * (-1);
+                int win = calculateWinner(grid);
+                if (win == userIndex * (-1)) { grid[move / 3, move % 3] = 0; return 2; } //Clear and return
+                if (win == userIndex) { grid[move/3, move%3] =0; return 0;}
+
+                int lowest = 1; //Lowest value
+                for (int i = 0; i < 3; i++)
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (grid[i, j] == 0)
+                        {
+                            int q = getMoveQuality(i*3+j,false,grid);
+                            if (q < lowest) lowest = q;
+                        }
+                    }
+                //clear and return
+                grid[move / 3, move % 3] = 0; 
+                return lowest;
+            }
+            else{   //User move
+                grid[move/3, move%3] = userIndex;
+                int win = calculateWinner(grid);
+                if (win == userIndex * (-1)) { grid[move / 3, move % 3] = 0; return 2; } //Clear and return
+                if (win == userIndex) { grid[move/3, move%3] =0; return 0;}
+
+
+                int highest = 1; //Lowest value
+                for (int i = 0; i < 3; i++)
+                    for (int j = 0; j < 3; j++)
+                    {
+                        if (grid[i, j] == 0)
+                        {
+                            int q = getMoveQuality(i*3+j,false,grid);
+                            if (q > highest) highest = q;
+                        }
+                    }
+                //clear and return
+                grid[move / 3, move % 3] = 0; 
+                return highest;
+            }
+
+
+            return 0;
         }
     }
 }

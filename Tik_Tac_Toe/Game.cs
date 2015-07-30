@@ -9,6 +9,7 @@ namespace Tik_Tac_Toe
     class Game
     {
         protected int[,] table;
+        
 
         private int nextPlayerId; // 1 or -1
         protected Player[] players = new Player[2];
@@ -50,8 +51,9 @@ namespace Tik_Tac_Toe
 
 
         //Check for winner
-        private int calculateWinner()
+        protected static int calculateWinner(int[,] grid)
         {
+
             //Algorithm to check winners
             int total3 = 0, total4 = 0, total = 0;
             for (int i = 0; i < 3; i++)
@@ -60,11 +62,11 @@ namespace Tik_Tac_Toe
 
                 for (int j = 0; j < 3; j++)
                 {
-                    if (table[i, j] != 0)
+                    if (grid[i, j] != 0)
                         total += 1;
 
-                    total1 += table[i, j];
-                    total2 += table[j, i];
+                    total1 += grid[i, j];
+                    total2 += grid[j, i];
                 }
 
                 //check for cross lines
@@ -76,8 +78,8 @@ namespace Tik_Tac_Toe
                 {
                     return 1;
                 }
-                total3 += table[i, i];
-                total4 += table[i, 2 - i];
+                total3 += grid[i, i];
+                total4 += grid[i, 2 - i];
 
             }
 
@@ -103,7 +105,7 @@ namespace Tik_Tac_Toe
         //Update points and calculate is there a winner
         protected void updatePointsAndCalculateWinner()
         {
-            int newWinner = calculateWinner();
+            int newWinner = calculateWinner(table);
             //if Someone has win increase his points
             if (newWinner != winner && newWinner != 0)
             {
