@@ -71,7 +71,7 @@ namespace Tik_Tac_Toe
             //To Do - 
             //      Disable grid,
             //      show reset(Play again) button 
-            if (game.getWinner() != 0)
+            if (game.getWinner()==1 || game.getWinner()==-1)
             {
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Start New Game? \n",
                                                          "Game Result",
@@ -86,12 +86,12 @@ namespace Tik_Tac_Toe
 
             else
             {
-                DialogResult gameResult = MessageBox.Show("Game is Drawn \n \n Start New Game?",
+                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Start New Game?",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,
                                                          MessageBoxIcon.Information
                                                           );
-                if (gameResult == DialogResult.Yes)
+                if (gameResult1 == DialogResult.Yes)
                 {
                     game.reset(false);
                 }
