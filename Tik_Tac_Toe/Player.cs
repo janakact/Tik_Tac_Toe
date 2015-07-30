@@ -14,6 +14,7 @@ namespace Tik_Tac_Toe
         public Player(String name)
         {
             this.name = name;
-        }
+        } 
+
     }
 }
