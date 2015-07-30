@@ -123,9 +123,6 @@ namespace Tik_Tac_Toe
                 grid[move / 3, move % 3] = 0; 
                 return highest;
             }
-
-
-            return 0;
         }
     }
 }
