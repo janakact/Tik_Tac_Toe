@@ -36,11 +36,13 @@ namespace Tik_Tac_Toe
                 this.btns[i].Text = i + "";
                 this.btns[i].UseVisualStyleBackColor = true;
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
+                
             }
 
             this.game = new Game();
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
+          
         }
 
         private void updateInterface(object sender, EventArgs e) //To Ravindu: Improve this function
@@ -85,7 +87,22 @@ namespace Tik_Tac_Toe
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            game.reset(false);
+            // have to show this after game started
+            if (game.getWinner() == 0)
+            {
+                DialogResult result= MessageBox.Show("Current game data will be lost. Are you sure you want to continue!!",
+                    "Reset Warning",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes) 
+                {
+                    game.reset(false);
+                }
+                
+            }
+            else game.reset(false);
+           
         }
 
     }
