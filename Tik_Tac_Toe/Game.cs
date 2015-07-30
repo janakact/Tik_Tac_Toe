@@ -110,7 +110,7 @@ namespace Tik_Tac_Toe
             if (newWinner != winner && newWinner != 0 && newWinner!=2)
             {
                 winner = newWinner;
-                getPlayer(winner).points += 1;
+                getPlayer(winner).points += 1; 
             }
         }
 
