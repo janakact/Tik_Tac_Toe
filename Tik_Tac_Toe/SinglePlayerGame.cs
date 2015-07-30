@@ -8,16 +8,50 @@ namespace Tik_Tac_Toe
 {
     class SinglePlayerGame : Game
     {
-        bool isUserChance = false; //True if it is user's time to make a move
+        //Difficulties
+        public const int EasyLevel = 0;
+        public const int MediumLevel = 1;
+        public const int HardLevel = 2;
 
-        public SinglePlayerGame():base()
+        //True if it is user's time to make a move
+        bool isUserChance; 
+        int userIndex;
+        int difficulty;
+
+        
+
+        public SinglePlayerGame(String playerName, int userIndex, int difficulty)
         {
+            isUserChance = true;
+            this.userIndex = userIndex;
+            setPlayer(userIndex, new Player(playerName));
 
+            //AI
+            this.difficulty = difficulty;
+            setPlayer(userIndex * (-1), new Player("Computer"));
         }
-        protected void updateMove(int row, int col, int playerId)
+
+        //Mark the move
+        public override bool updateMove(int row, int col)
         {
-            if (isUserChance)
-            table[row, col] = playerId;
+            if (table[row, col] != 0 || !isUserChance)
+                return false;
+            //block doing another move
+            isUserChance = false;
+
+            updateMove(row, col, userIndex); //Mark the moves
+
+            callUpdate(); //Update Interface
+
+            //call an AI move
+
+            return true;
+        }
+
+        private void updateAIMove()
+        {
+            int[,] grid = table;
+            //
         }
     }
 }

@@ -9,16 +9,17 @@ namespace Tik_Tac_Toe
     class Game
     {
         protected int[,] table;
+
         private int nextPlayerId; // 1 or -1
         protected Player[] players = new Player[2];
+        protected int winner = 0; // 0 game is going on,
+
         public event EventHandler Update;
-        protected int winner = 0;
 
         public Game()
         {
             table = new int[3, 3];
             nextPlayerId = 1;
-            callUpdate();
             players[0] = new Player("Player1");
             players[1] = new Player("Player2");
         }
@@ -28,6 +29,12 @@ namespace Tik_Tac_Toe
             if (i == 1) return players[1];
             else if (i == -1) return players[0];
             return null;
+        }
+
+        public void setPlayer(int i, Player player)
+        {
+            if (i == 1) players[i] = player;
+            else if (i == -1) players[0] = player;
         }
 
         public void setPlayers(Player p1, Player p2)
@@ -94,7 +101,7 @@ namespace Tik_Tac_Toe
         }
 
         //Update points and calculate is there a winner
-        private void updatePointsAndCalculateWinner()
+        protected void updatePointsAndCalculateWinner()
         {
             int newWinner = calculateWinner();
             //if Someone has win increase his points
@@ -109,17 +116,17 @@ namespace Tik_Tac_Toe
         protected void updateMove(int row, int col, int playerId)
         {
             table[row, col] = playerId;
+            updatePointsAndCalculateWinner(); //Calculate points
         }
 
         //Mark the move
-        public bool updateMove(int row, int col)
+        public virtual bool updateMove(int row, int col)
         {
             if (table[row, col] != 0)
                 return false;
 
             updateMove(row, col, nextPlayerId);
             nextPlayerId *= (-1);
-            updatePointsAndCalculateWinner();
             callUpdate();
             return true;
         }
@@ -140,7 +147,7 @@ namespace Tik_Tac_Toe
             callUpdate();
         }
 
-        private void callUpdate()
+        protected void callUpdate()
         {
             if (Update != null)
             {
