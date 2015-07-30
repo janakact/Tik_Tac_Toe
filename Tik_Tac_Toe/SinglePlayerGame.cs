@@ -49,6 +49,7 @@ namespace Tik_Tac_Toe
 
         private bool updateAIMove()
         {
+            if (isUserChance) return false;
             //Make a clone
             int[,] grid = (int[,]) table.Clone();
 
@@ -71,27 +72,30 @@ namespace Tik_Tac_Toe
             if(highestQ!=-1)
             {
                 updateMove(move / 3, move % 3, userIndex * (-1));
-
                 callUpdate();       //Update Interface
                 isUserChance = true;
 
                 return true;
-
             }
             return false;
         }
 
 
-        //Returns 0 = lose, 1=both, 2=win sure
+        //Returns 0 = lose, 1=both, 2=win sure , 3=if not loose
         private int getMoveQuality(int move, bool activeTurn, int[,] grid)
         {
             //Assume that grid[move] ==0 
             if(activeTurn)      //If it is a AI move
             {
-                grid[move / 3, move % 3] = userIndex * (-1);
+                //Check if this move is a must
+                grid[move / 3, move % 3] = userIndex ;
                 int win = calculateWinner(grid);
+                if (win == userIndex) { grid[move / 3, move % 3] = 0; return 3; } // Return 3;
+
+                grid[move / 3, move % 3] = userIndex * (-1);
+                win = calculateWinner(grid);
                 if (win == userIndex * (-1)) { grid[move / 3, move % 3] = 0; return 2; } //Clear and return
-                if (win == userIndex) { grid[move/3, move%3] =0; return 0;}
+                if (win == userIndex) { grid[move/3, move%3] =0; return 0;} // THis line is useless
 
                 int lowest = 1; //Lowest value
                 for (int i = 0; i < 3; i++)
