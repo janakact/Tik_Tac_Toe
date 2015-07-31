@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+using log4net;
+
 namespace Tik_Tac_Toe
 {
     class Game
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
+
         protected int[,] table;
         
 
@@ -19,6 +24,7 @@ namespace Tik_Tac_Toe
  
         public Game()
         {
+            logger.Info("Game Created");
             table = new int[3, 3];
             nextPlayerId = 1;
             players[0] = new Player("Player1");
