@@ -71,6 +71,14 @@ namespace Tik_Tac_Toe
                 }
             if(highestQ!=-1)
             {
+
+                if (highestQ <= 1) //Make a random move
+                {
+                    move = (new Random()).Next(0, 9);
+                    while(grid[move/3,move%3]!=0)
+                        move = (new Random()).Next(0, 9);
+                }
+
                 updateMove(move / 3, move % 3, userIndex * (-1));
                 callUpdate();       //Update Interface
                 isUserChance = true;
