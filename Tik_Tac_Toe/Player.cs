@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tik_Tac_Toe
 {
-    class Player
+    public class Player
     {
         public String name;
         public int points;
