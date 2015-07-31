@@ -122,7 +122,7 @@ namespace Tik_Tac_Toe
         }
 
         //OK Press listener
-        private void singlePlayerOK_Click(object sender, EventArgs e)
+        private void singlePlayerOK_Click(object sender, EventArgs e)   
         {
             // i want to choose randomly which player palys first
             Random rand = new Random();
