@@ -25,7 +25,7 @@ namespace Tik_Tac_Toe
  
         public Game()
         {
-            logger.Info("Game Create");
+            logger.Info("Creating Game");
             table = new int[3, 3];
             nextPlayerId = 1;
             setPlayers(new Player("Player1"), new Player("Player2"));

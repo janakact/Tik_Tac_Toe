@@ -21,7 +21,7 @@ namespace Tik_Tac_Toe
         int difficulty;
 
         //logger
-        private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(SinglePlayerGame));
 
         public SinglePlayerGame(String playerName, int userIndex, int difficulty)
         {
