@@ -14,9 +14,9 @@ namespace Tik_Tac_Toe
         private int nextPlayerId; // 1 or -1
         protected Player[] players = new Player[2];
         protected int winner = 0; // 0 game is going on,
-
         public event EventHandler Update;
 
+ 
         public Game()
         {
             table = new int[3, 3];
