@@ -13,7 +13,7 @@ namespace Tik_Tac_Toe
     public partial class StartForm : Form
     {
         public String singlePlayerName;
-        
+        public int difficulty;
         
         public event EventHandler OKPressed; // Eevnt handler 
 
@@ -30,7 +30,10 @@ namespace Tik_Tac_Toe
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(this.radioButton1.Checked)
+            {
+                difficulty = SinglePlayerGame.EasyLevel;
+            }
         }
 
         private void StartForm_Load(object sender, EventArgs e)
@@ -40,7 +43,18 @@ namespace Tik_Tac_Toe
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
+            if (this.radioButton1.Checked)
+            {
+                difficulty = SinglePlayerGame.MediumLevel;
+            }
+        }
 
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.radioButton1.Checked)
+            {
+                difficulty = SinglePlayerGame.HardLevel;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,7 +68,14 @@ namespace Tik_Tac_Toe
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {//check again
-            this.singlePlayerName = sender.ToString();
+            String temp = sender.ToString().Substring(35);
+            this.singlePlayerName =temp;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }
