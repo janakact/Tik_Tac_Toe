@@ -85,10 +85,10 @@ namespace Tik_Tac_Toe
             }
 
             else
-            {
+            { 
                 DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Start New Game?",
                                                          "Game Result",
-                                                         MessageBoxButtons.YesNo,
+                                                         MessageBoxButtons.YesNo,//convert this into continue & start new session
                                                          MessageBoxIcon.Information
                                                           );
                 if (gameResult1 == DialogResult.Yes)
@@ -106,14 +106,20 @@ namespace Tik_Tac_Toe
 
         private void btnSinglePlayer_Click(object sender, EventArgs e)
         {
+            
             //Grid
-            this.game = new Game();
-            this.game.Update += new System.EventHandler(this.updateInterface);
+            StartForm startForm = new StartForm();
+            startForm.ShowDialog();
+
+            game = new SinglePlayerGame("Me", 1, SinglePlayerGame.EasyLevel);
+            game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+           
             // have to show this after game started
             if (game.getWinner() == 0)
             {
@@ -132,11 +138,23 @@ namespace Tik_Tac_Toe
            
         }
 
-        private void btnMultiplayerOffline_Click(object sender, EventArgs e)
+        private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-            game = new SinglePlayerGame("Me", 1, SinglePlayerGame.EasyLevel);
-            game.Update += new System.EventHandler(this.updateInterface);
+            this.game = new Game();
+            this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
+           
+
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainForm_Load2(object sender, EventArgs e)
+        {
+
         }
 
     }
