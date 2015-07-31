@@ -9,7 +9,7 @@ using log4net;
 
 namespace Tik_Tac_Toe
 {
-    class Game
+    public abstract class Game
     {
 
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
@@ -17,20 +17,25 @@ namespace Tik_Tac_Toe
         protected int[,] table;
         
 
-        private int nextPlayerId; // 1 or -1
-        protected Player[] players = new Player[2];
-        protected int winner = 0; // 0 game is going on,
+        private Player[] players = new Player[2];
+        private int drawCount = 0;  //Number of drows
+        private int winner = 0; // 0 game is going on,
         public event EventHandler Update;
+
+        protected String stateMessage = "";
 
  
         public Game()
         {
             logger.Info("Creating Game");
             table = new int[3, 3];
-            nextPlayerId = 1;
             setPlayers(new Player("Player1"), new Player("Player2"));
             logger.Info("Game Created");
         }
+
+        //Abstract methods
+        //Mark the move
+        public abstract bool updateMove(int row, int col);
 
         public Player getPlayer(int i)
         {
@@ -38,6 +43,11 @@ namespace Tik_Tac_Toe
             if (i == 1) return players[1];
             else if (i == -1) return players[0];
             return null;
+        }
+
+        public int getDrawCount()
+        {
+            return drawCount;
         }
 
         public void setPlayer(int i, Player player)
@@ -69,7 +79,7 @@ namespace Tik_Tac_Toe
         protected static int calculateWinner(int[,] grid)
         {
 
-            logger.Info("Calculating winner");
+            //logger.Info("Calculating winner");
             //Algorithm to check winners
             int total3 = 0, total4 = 0, total = 0;
             for (int i = 0; i < 3; i++)
@@ -128,9 +138,15 @@ namespace Tik_Tac_Toe
             {
                 logger.Info("Winner changed newWinner:"+newWinner);
                 winner = newWinner;
-                if (newWinner != 2 && newWinner != 0)
+                if (winner != 2 && winner != 0)
                 {
                     getPlayer(winner).points += 1;
+                }
+
+                if (winner == 2)
+                {
+                    drawCount++;
+                    logger.Info("Draw Count increased") ;
                 }
             }
         }
@@ -143,27 +159,16 @@ namespace Tik_Tac_Toe
             updatePointsAndCalculateWinner(); //Calculate points
         }
 
-        //Mark the move
-        public virtual bool updateMove(int row, int col)
+        //return state
+        public String getStateMessage()
         {
-            if (table[row, col] != 0)
-            {
-                logger.Warn("Requested a imposible move");
-                return false;
-            }
-
-            updateMove(row, col, nextPlayerId);
-            nextPlayerId *= (-1);
-            callUpdate();
-            return true;
+            return stateMessage;
         }
 
         public virtual void reset(bool full)
         {
             table = new int[3, 3];
             winner = 0;
-
-       
 
             //if it is a full reset clear the points also
             if (full)

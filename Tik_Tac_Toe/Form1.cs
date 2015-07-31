@@ -44,7 +44,7 @@ namespace Tik_Tac_Toe
                 
             }
 
-            this.game = new Game();
+            this.game = new MultiplayerOfflineGame();
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
           
@@ -126,12 +126,13 @@ namespace Tik_Tac_Toe
         {
             // i want to choose randomly which player palys first
             Random rand = new Random();
-            game = new SinglePlayerGame(this.startForm.singlePlayerName,1,startForm.difficulty);
+            game = new SinglePlayerGame(this.startForm.singlePlayerName, rand.Next(0,2)==0?1:-1 ,startForm.difficulty);
             game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
             startForm.Dispose();
 
-           
+
+            gamePanel.Visible = true;
         }
 
 
@@ -160,11 +161,11 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-            this.game = new Game();
+            this.game = new MultiplayerOfflineGame();
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
-           
 
+            gamePanel.Visible = true;
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -173,11 +174,6 @@ namespace Tik_Tac_Toe
         }
 
         private void mainForm_Load2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

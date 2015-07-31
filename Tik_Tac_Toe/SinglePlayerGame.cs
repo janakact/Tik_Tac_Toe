@@ -98,11 +98,8 @@ namespace Tik_Tac_Toe
             //Assume that grid[move] ==0 
             if(activeTurn)      //If it is a AI move
             {
-                //Check if this move is a must
-                grid[move / 3, move % 3] = userIndex ;
-                int win = calculateWinner(grid);
-                if (win == userIndex) { grid[move / 3, move % 3] = 0; return 3; } // Return 3;
 
+                int win;
                 grid[move / 3, move % 3] = userIndex * (-1);
                 win = calculateWinner(grid);
                 if (win == userIndex * (-1)) { grid[move / 3, move % 3] = 0; return 2; } //Clear and return
