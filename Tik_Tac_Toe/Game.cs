@@ -11,6 +11,7 @@ namespace Tik_Tac_Toe
 {
     class Game
     {
+
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
 
         protected int[,] table;
