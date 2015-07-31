@@ -44,7 +44,7 @@ namespace Tik_Tac_Toe
                 
             }
 
-            this.game = new MultiplayerOfflineGame();
+            this.game = new MultiplayerOfflineGame("Name1", "Name1");
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
           
@@ -161,7 +161,7 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-            this.game = new MultiplayerOfflineGame();
+            this.game = new MultiplayerOfflineGame("Name1", "Name1");
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
 

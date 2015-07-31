@@ -14,6 +14,12 @@ namespace Tik_Tac_Toe
 
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
 
+        //Game states define
+        public const int GoingOn = 0,
+                            Draw = 2,
+                            Win = 10,
+                            WaitingForConnection = 100;
+
         protected int[,] table;
         
 
@@ -22,14 +28,17 @@ namespace Tik_Tac_Toe
         private int winner = 0; // 0 game is going on,
         public event EventHandler Update;
 
-        protected String stateMessage = "";
+
+
+        //States
+        protected int state;
 
  
         public Game()
         {
             logger.Info("Creating Game");
             table = new int[3, 3];
-            setPlayers(new Player("Player1"), new Player("Player2"));
+            state = Game.GoingOn;
             logger.Info("Game Created");
         }
 
@@ -141,12 +150,14 @@ namespace Tik_Tac_Toe
                 if (winner != 2 && winner != 0)
                 {
                     getPlayer(winner).points += 1;
+                    state = Game.Win;
                 }
 
                 if (winner == 2)
                 {
                     drawCount++;
                     logger.Info("Draw Count increased") ;
+                    state = Game.Draw;
                 }
             }
         }
@@ -160,9 +171,9 @@ namespace Tik_Tac_Toe
         }
 
         //return state
-        public String getStateMessage()
+        public int getState()
         {
-            return stateMessage;
+            return state;
         }
 
         public virtual void reset(bool full)

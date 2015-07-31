@@ -11,7 +11,7 @@ namespace Tik_Tac_Toe_Test
         [TestMethod]
         public void CreateGame()
         {
-            Game game = new MultiplayerOfflineGame();
+            Game game = new MultiplayerOfflineGame("Name1", "Name1");
             Assert.AreEqual(0, game.getPlayer(-1).points);
             Assert.AreEqual(0, game.getPlayer(1).points);
         }
