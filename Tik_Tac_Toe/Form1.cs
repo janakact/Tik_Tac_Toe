@@ -25,7 +25,7 @@ namespace Tik_Tac_Toe
 
         //im creating start forms here
         StartForm startForm;
-
+        StartForm2 startForm2;
         private void InitializeGameComponent()
         {
             //Our Codes
@@ -78,7 +78,7 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
-                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Start New Game? \n",
+                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do you want to continue? \n",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,
                                                          MessageBoxIcon.Information
@@ -87,11 +87,16 @@ namespace Tik_Tac_Toe
                 {
                     game.reset(false);
                 }
+                if (gameResult == DialogResult.No)
+                {
+                    game.reset(true);
+                }
+                
             }
 
             else
             { 
-                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Start New Game?",
+                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Do you want to continue?",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,//convert this into continue & start new session
                                                          MessageBoxIcon.Information
@@ -99,6 +104,10 @@ namespace Tik_Tac_Toe
                 if (gameResult1 == DialogResult.Yes)
                 {
                     game.reset(false);
+                }
+                if (gameResult1 == DialogResult.No)
+                {
+                    game.reset(true);
                 }
             }
           }
@@ -121,7 +130,7 @@ namespace Tik_Tac_Toe
 
         }
 
-        //OK Press listener
+        //OK Press listener for singlePlayer ok
         private void singlePlayerOK_Click(object sender, EventArgs e)   
         {
             // i want to choose randomly which player palys first
@@ -161,13 +170,25 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
+            startForm2 = new StartForm2();
+            startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
+            startForm2.ShowDialog();
+
+        }
+
+        //OK Press listener for multiPlayer ok(offline)
+        private void multiPlayerOK_Click(object sender, EventArgs e)
+        {
             this.game = new MultiplayerOfflineGame();
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
 
             gamePanel.Visible = true;
-        }
+            startForm2.Dispose();
 
+
+            gamePanel.Visible = true;
+        }
         private void mainForm_Load(object sender, EventArgs e)
         {
 
