@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net;
 
 namespace Tik_Tac_Toe
 {
     public partial class mainForm : Form
     {
+
+        private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
         public mainForm()
         {
             InitializeComponent();
             InitializeGameComponent();
 
+            logger.Fatal("Game Created");
         }
 
         //im creating start forms here

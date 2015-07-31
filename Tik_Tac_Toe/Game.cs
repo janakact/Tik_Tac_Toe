@@ -11,6 +11,7 @@ namespace Tik_Tac_Toe
 {
     class Game
     {
+
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
 
         protected int[,] table;
@@ -24,15 +25,16 @@ namespace Tik_Tac_Toe
  
         public Game()
         {
-            logger.Info("Game Created");
+            logger.Info("Creating Game");
             table = new int[3, 3];
             nextPlayerId = 1;
-            players[0] = new Player("Player1");
-            players[1] = new Player("Player2");
+            setPlayers(new Player("Player1"), new Player("Player2"));
+            logger.Info("Game Created");
         }
 
         public Player getPlayer(int i)
         {
+            logger.Info("Player " + i + " is read");
             if (i == 1) return players[1];
             else if (i == -1) return players[0];
             return null;
@@ -40,18 +42,25 @@ namespace Tik_Tac_Toe
 
         public void setPlayer(int i, Player player)
         {
+            if(player==null)
+            {
+                logger.Error("Null player add request");
+            }
+            logger.Info("Player " + i + " added name:" + player.name + " points:" + player.points);
             if (i == 1) players[i] = player;
             else if (i == -1) players[0] = player;
         }
 
         public void setPlayers(Player p1, Player p2)
         {
-            players[0] = p1;
-            players[1] = p2;
+            logger.Info("setting players");
+            setPlayer(-1, p1);
+            setPlayer(1, p2);
         }
 
         public int[,] getTable()
         {
+            logger.Info("Read the table");
             return table;
         }
 
@@ -60,6 +69,7 @@ namespace Tik_Tac_Toe
         protected static int calculateWinner(int[,] grid)
         {
 
+            logger.Info("Calculating winner");
             //Algorithm to check winners
             int total3 = 0, total4 = 0, total = 0;
             for (int i = 0; i < 3; i++)
@@ -105,6 +115,7 @@ namespace Tik_Tac_Toe
 
         public int getWinner()
         {
+            logger.Info("Read the winner");
             return winner;
         }
 
@@ -115,15 +126,19 @@ namespace Tik_Tac_Toe
             //if Someone has win increase his points
             if (newWinner != winner)
             {
+                logger.Info("Winner changed newWinner:"+newWinner);
                 winner = newWinner;
-                if(newWinner!=2 && newWinner != 0 )
-                getPlayer(winner).points += 1;
+                if (newWinner != 2 && newWinner != 0)
+                {
+                    getPlayer(winner).points += 1;
+                }
             }
         }
 
         //Mark the move of the playerId
         protected void updateMove(int row, int col, int playerId)
         {
+            logger.Info("Move updated row:" + row + " col:" + col + " playerId:" + playerId);
             table[row, col] = playerId;
             updatePointsAndCalculateWinner(); //Calculate points
         }
@@ -132,7 +147,10 @@ namespace Tik_Tac_Toe
         public virtual bool updateMove(int row, int col)
         {
             if (table[row, col] != 0)
+            {
+                logger.Warn("Requested a imposible move");
                 return false;
+            }
 
             updateMove(row, col, nextPlayerId);
             nextPlayerId *= (-1);
@@ -145,6 +163,8 @@ namespace Tik_Tac_Toe
             table = new int[3, 3];
             winner = 0;
 
+       
+
             //if it is a full reset clear the points also
             if (full)
             {
@@ -153,6 +173,7 @@ namespace Tik_Tac_Toe
             }
 
             //Finally update Interface
+            logger.Info("Game Reset full:"+full);
             callUpdate();
         }
 
@@ -160,11 +181,12 @@ namespace Tik_Tac_Toe
         {
             if (Update != null)
             {
+                logger.Info("Interface Update requests");
                 Update(this, EventArgs.Empty);
             }
+            else
+                logger.Error("No listner to do the interface update");
         }
-
-
 
     }
 

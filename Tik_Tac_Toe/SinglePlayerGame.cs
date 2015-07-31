@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using log4net;
 
 namespace Tik_Tac_Toe
 {
@@ -19,10 +20,12 @@ namespace Tik_Tac_Toe
         int userIndex;
         int difficulty;
 
-        
+        //logger
+        private static readonly ILog logger = LogManager.GetLogger(typeof(SinglePlayerGame));
 
         public SinglePlayerGame(String playerName, int userIndex, int difficulty)
         {
+            logger.Info("Creating Single Player Game");
             userFirst = true;
             isUserChance = true;
             this.userIndex = userIndex;
