@@ -18,7 +18,7 @@ namespace Tik_Tac_Toe
         {
             InitializeComponent();
         }
-
+        public event EventHandler OKPressed;
         private void button2_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -38,7 +38,11 @@ namespace Tik_Tac_Toe
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (OKPressed != null)
+            {
+                OKPressed(this, EventArgs.Empty);
+            }
+            this.Hide();
         }
     }
 }
