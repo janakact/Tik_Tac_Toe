@@ -124,8 +124,9 @@ namespace Tik_Tac_Toe
         //OK Press listener
         private void singlePlayerOK_Click(object sender, EventArgs e)
         {
-
-            game = new SinglePlayerGame(this.startForm.singlePlayerName, 1, SinglePlayerGame.EasyLevel);
+            // i want to choose randomly which player palys first
+            Random rand = new Random();
+            game = new SinglePlayerGame(this.startForm.singlePlayerName,1,startForm.difficulty);
             game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
             startForm.Dispose();
