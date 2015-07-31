@@ -69,7 +69,7 @@ namespace Tik_Tac_Toe
         protected static int calculateWinner(int[,] grid)
         {
 
-            logger.Info("Calculating winner");
+            //logger.Info("Calculating winner");
             //Algorithm to check winners
             int total3 = 0, total4 = 0, total = 0;
             for (int i = 0; i < 3; i++)
