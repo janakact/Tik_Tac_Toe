@@ -68,7 +68,7 @@ namespace Tik_Tac_Toe
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {//check again
-            String temp = sender.ToString().Substring(35);
+            String temp = sender.ToString().Substring(36);
             this.singlePlayerName =temp;
         }
 
