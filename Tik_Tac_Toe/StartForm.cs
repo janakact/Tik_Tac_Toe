@@ -12,6 +12,10 @@ namespace Tik_Tac_Toe
 {
     public partial class StartForm : Form
     {
+        String singlePlayerName;
+        
+        public event EventHandler OKPressed; // Eevnt handler 
+
         public StartForm()
         {
 
@@ -36,6 +40,20 @@ namespace Tik_Tac_Toe
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (OKPressed != null)
+            {
+                OKPressed(this, EventArgs.Empty);
+            }
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {//check again
+            this.singlePlayerName = sender.ToString();
         }
     }
 }

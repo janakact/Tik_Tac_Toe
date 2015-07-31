@@ -109,13 +109,23 @@ namespace Tik_Tac_Toe
             
             //Grid
             StartForm startForm = new StartForm();
+            startForm.OKPressed += new System.EventHandler(this.singlePlayerOK_Click);
             startForm.ShowDialog();
+           
 
+        }
+
+        //OK Press listener
+        private void singlePlayerOK_Click(object sender, EventArgs e)
+        {
             game = new SinglePlayerGame("Me", 1, SinglePlayerGame.EasyLevel);
             game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
-
+           
         }
+
+
+
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -153,6 +163,11 @@ namespace Tik_Tac_Toe
         }
 
         private void mainForm_Load2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
