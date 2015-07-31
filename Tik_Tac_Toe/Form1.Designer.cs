@@ -99,6 +99,7 @@
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(218, 217);
             this.gamePanel.TabIndex = 1;
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // lblPlayer1
             // 
@@ -149,6 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(560, 241);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblState);
@@ -159,6 +161,7 @@
             this.Controls.Add(this.homePanel);
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.homePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
