@@ -19,7 +19,8 @@ namespace Tik_Tac_Toe
 
         }
 
-
+        //im creating start forms here
+        StartForm startForm;
 
         private void InitializeGameComponent()
         {
@@ -108,7 +109,8 @@ namespace Tik_Tac_Toe
         {
             
             //Grid
-            StartForm startForm = new StartForm();
+            startForm = new StartForm();
+            // added a event handler to ok button pressed scenario
             startForm.OKPressed += new System.EventHandler(this.singlePlayerOK_Click);
             startForm.ShowDialog();
            
@@ -118,9 +120,12 @@ namespace Tik_Tac_Toe
         //OK Press listener
         private void singlePlayerOK_Click(object sender, EventArgs e)
         {
-            game = new SinglePlayerGame("Me", 1, SinglePlayerGame.EasyLevel);
+
+            game = new SinglePlayerGame(this.startForm.singlePlayerName, 1, SinglePlayerGame.EasyLevel);
             game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
+            startForm.Dispose();
+
            
         }
 

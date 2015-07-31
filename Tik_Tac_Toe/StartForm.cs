@@ -12,7 +12,8 @@ namespace Tik_Tac_Toe
 {
     public partial class StartForm : Form
     {
-        String singlePlayerName;
+        public String singlePlayerName;
+        
         
         public event EventHandler OKPressed; // Eevnt handler 
 
