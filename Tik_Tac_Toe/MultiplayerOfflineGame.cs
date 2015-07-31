@@ -11,10 +11,12 @@ namespace Tik_Tac_Toe
 
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
         private int nextPlayerId; // 1 or -1
-        public MultiplayerOfflineGame():base()
+        public MultiplayerOfflineGame(String name1, String name2):base()
         {
+
+            setPlayers(new Player(name1), new Player(name2));
             logger.Info("creating a multiplayer game");
-             nextPlayerId = 1;
+            nextPlayerId = 1;
         }
 
         public override bool updateMove(int row, int col)
@@ -27,7 +29,6 @@ namespace Tik_Tac_Toe
 
             updateMove(row, col, nextPlayerId);
             nextPlayerId *= (-1);
-            stateMessage = "Game is started";
             callUpdate();
             return true;
         }

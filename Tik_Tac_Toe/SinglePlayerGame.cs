@@ -10,14 +10,15 @@ namespace Tik_Tac_Toe
     class SinglePlayerGame : Game
     {
         //Difficulties
-        public const int EasyLevel = 0;
-        public const int MediumLevel = 1;
-        public const int HardLevel = 2;
+        public const int   EasyLevel = 0,
+                           MediumLevel = 1,
+                           HardLevel = 2;
 
         //True if it is user's time to make a move
-        bool isUserChance;
+        public bool isUserChance;
+        public int userIndex;
+
         bool userFirst;
-        int userIndex;
         int difficulty;
 
         //logger
