@@ -41,16 +41,20 @@
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblState = new System.Windows.Forms.Label();
+            this.p = new System.IO.FileSystemWatcher();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
             this.SuspendLayout();
             // 
             // homePanel
             // 
+            this.homePanel.BackColor = System.Drawing.Color.Transparent;
             this.homePanel.Controls.Add(this.btnStop);
             this.homePanel.Controls.Add(this.btnMultiplayerOnline);
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
+            this.homePanel.ForeColor = System.Drawing.Color.Black;
             this.homePanel.Location = new System.Drawing.Point(12, 12);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(133, 217);
@@ -97,15 +101,17 @@
             // 
             // gamePanel
             // 
+            this.gamePanel.BackColor = System.Drawing.Color.Transparent;
             this.gamePanel.Controls.Add(this.btnReset);
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.label3);
-            this.gamePanel.Location = new System.Drawing.Point(151, 12);
+            this.gamePanel.Location = new System.Drawing.Point(146, 12);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(386, 217);
+            this.gamePanel.Size = new System.Drawing.Size(391, 217);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // btnReset
             // 
@@ -152,12 +158,19 @@
             this.lblState.Size = new System.Drawing.Size(0, 13);
             this.lblState.TabIndex = 5;
             // 
+            // p
+            // 
+            this.p.EnableRaisingEvents = true;
+            this.p.SynchronizingObject = this;
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(560, 241);
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ttt1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(543, 235);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
@@ -167,6 +180,7 @@
             this.homePanel.ResumeLayout(false);
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +201,7 @@
         private Game game;
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Button btnReset;
+        private System.IO.FileSystemWatcher p;
     }
 }
 

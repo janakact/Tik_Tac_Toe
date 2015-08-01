@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
 
+
+//For test 
+
+using System.Net;
+using System.Net.Sockets;
+
 namespace Tik_Tac_Toe
 {
     public partial class mainForm : Form
@@ -38,17 +44,17 @@ namespace Tik_Tac_Toe
                 this.btns[i].Location = new System.Drawing.Point((i % 3) * 60, (i / 3) * 60);
                 this.btns[i].Name = "btn" + i;
                 this.btns[i].Size = new System.Drawing.Size(50, 50);
-                this.btns[i].TabIndex = 0;
-                this.btns[i].Text = i + "";
-                this.btns[i].UseVisualStyleBackColor = true;
+                this.btns[i].TabIndex = i+3;
+                //this.btns[i].UseVisualStyleBackColor = true;
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
-                
+                this.btns[i].BackColor = Color.Green;
             }
 
             this.game = new MultiplayerOfflineGame("Name1", "Name1");
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
-          
+
+            //TcpClient tcp = new TcpClient();
         }
 
         private void updateInterface(object sender, EventArgs e) //To Ravindu: Improve this function
@@ -56,7 +62,18 @@ namespace Tik_Tac_Toe
             int[,] table = game.getTable();
             for(int i=0;i<9;i++)
             {
-                btns[i].Text = table[i / 3, i % 3].ToString();
+                if (table[i / 3, i % 3] == 1)
+                {
+                    btns[i].BackColor = Color.Red;
+                }
+                else if(table[i / 3, i % 3] == -1)
+                {
+                    btns[i].BackColor = Color.Blue;
+                }
+                else
+                {
+                    btns[i].BackColor = Color.Green;
+                }
             }
 
             //Increase marks
@@ -79,7 +96,7 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
-                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Start New Game? \n",
+                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,
                                                          MessageBoxIcon.Information
@@ -88,11 +105,15 @@ namespace Tik_Tac_Toe
                 {
                     game.reset(false);
                 }
+                if (gameResult == DialogResult.No)
+                {
+                    game.reset(false);
+            }
             }
 
             else
             { 
-                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Start New Game?",
+                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Do you want to continue this game session?",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,//convert this into continue & start new session
                                                          MessageBoxIcon.Information
@@ -101,7 +122,11 @@ namespace Tik_Tac_Toe
                 {
                     game.reset(false);
                 }
+                if (gameResult1 == DialogResult.No)
+                {
+                    game.reset(true);
             }
+          }
           }
 
         private void btn_Click(object sender, EventArgs e)
@@ -134,6 +159,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
+           
         }
 
 
@@ -167,11 +193,7 @@ namespace Tik_Tac_Toe
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
             startForm2.ShowDialog();
             
-        /*    this.game = new MultiplayerOfflineGame("", "Name1");
-            this.game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
 
-            gamePanel.Visible = true;*/
         }
         private void multiPlayerOK_Click(object sender, EventArgs e)
         {
@@ -183,6 +205,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
+      
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -193,6 +216,11 @@ namespace Tik_Tac_Toe
         private void mainForm_Load2(object sender, EventArgs e)
         {
 
+        }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
 
         private void btnMultiplayerOnline_Click(object sender, EventArgs e)
