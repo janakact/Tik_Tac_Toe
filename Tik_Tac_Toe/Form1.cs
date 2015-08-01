@@ -25,7 +25,7 @@ namespace Tik_Tac_Toe
 
         //im creating start forms here
         StartForm startForm;
-
+        StartForm2 startForm2;
         private void InitializeGameComponent()
         {
             //Our Codes
@@ -161,9 +161,25 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-            this.game = new MultiplayerOfflineGame("Name1", "Name1");
+
+            startForm2 = new StartForm2();
+            startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
+            startForm2.ShowDialog();
+            
+        /*    this.game = new MultiplayerOfflineGame("", "Name1");
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
+
+            gamePanel.Visible = true;*/
+        }
+        private void multiPlayerOK_Click(object sender, EventArgs e)
+        {
+
+            this.game = new MultiplayerOfflineGame(startForm2.player1Name, startForm2.player2Name);
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+            startForm2.Dispose();
+
 
             gamePanel.Visible = true;
         }
