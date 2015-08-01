@@ -10,6 +10,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.IO;
 
+using System.Windows.Forms;
+
 namespace Tik_Tac_Toe
 {
     class MultiplayerOnlineGame:Game
@@ -20,7 +22,7 @@ namespace Tik_Tac_Toe
         
 
         //logger
-        private static readonly ILog logger = LogManager.GetLogger(typeof(SinglePlayerGame));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(MultiplayerOnlineGame));
 
         //is this is the chance of network player
         public bool isNetworkMove = false;
@@ -68,9 +70,24 @@ namespace Tik_Tac_Toe
 
         #region Constructor
 
-        public MultiplayerOnlineGame():base()        {
-            
 
+
+        public MultiplayerOnlineGame(bool asClient, String ip, String name)  : base()
+        {
+            logger.Info("Creating a MultiPlayer Game");
+            wServerIP = ip;
+            if (asClient)
+            {
+                networkPlayerI = 1;
+                ConnectServer(ip);
+            }
+            else
+            {
+                networkPlayerI = -1;
+                StartServer();
+            }
+            setPlayer(networkPlayerI, new Player("Online Player"));
+            setPlayer(networkPlayerI * (-1), new Player(name));
         }
 
         #endregion
@@ -174,6 +191,7 @@ namespace Tik_Tac_Toe
             catch (ThreadAbortException) { }
             catch (Exception ex)
             {
+                MessageBox.Show("An error ocurred: " + ex.Message + "\n" + ex.StackTrace);
                 setState(Game.Disconected);
                 callUpdate();
                 return;
@@ -286,6 +304,8 @@ namespace Tik_Tac_Toe
             catch (ThreadAbortException) { }
             catch (Exception ex)
             {
+
+                MessageBox.Show("An error ocurred: " + ex.Message + "\n" + ex.StackTrace);
                 setState(Game.Disconected);
                 callUpdate();
                 return;
@@ -330,6 +350,8 @@ namespace Tik_Tac_Toe
             }
             catch (Exception ex)
             {
+
+                MessageBox.Show("An error ocurred: " + ex.Message + "\n" + ex.StackTrace);
                 setState(Game.Disconected);
                 callUpdate();
                 return;
@@ -433,12 +455,12 @@ namespace Tik_Tac_Toe
 
         public override bool updateMove(int row, int col)
         {
-            if (table[row, col] != 0 && isNetworkMove)
+            if (table[row, col] != 0 || isNetworkMove)
             {
                 logger.Warn("Requested a imposible move");
                 return false;
             }
-
+            logger.Info("Lol LOl");
             isNetworkMove = true;
             updateMove(row, col, networkPlayerI*(-1)); //Mark the moves
             callUpdate();       //Update Interface

@@ -36,11 +36,11 @@
             this.btnMultiplayerOffline = new System.Windows.Forms.Button();
             this.btnSinglePlayer = new System.Windows.Forms.Button();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Button();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblState = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.btnMultiplayerOnline.TabIndex = 2;
             this.btnMultiplayerOnline.Text = "Multiplayer (online)";
             this.btnMultiplayerOnline.UseVisualStyleBackColor = true;
+            this.btnMultiplayerOnline.Click += new System.EventHandler(this.btnMultiplayerOnline_Click);
             // 
             // btnMultiplayerOffline
             // 
@@ -105,6 +106,16 @@
             this.gamePanel.Size = new System.Drawing.Size(386, 217);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(271, 185);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // lblPlayer1
             // 
@@ -140,16 +151,6 @@
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(0, 13);
             this.lblState.TabIndex = 5;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(271, 185);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 6;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // mainForm
             // 

@@ -26,6 +26,7 @@ namespace Tik_Tac_Toe
         //im creating start forms here
         StartForm startForm;
         StartForm2 startForm2;
+        StartForm3 startForm3;
         private void InitializeGameComponent()
         {
             //Our Codes
@@ -192,6 +193,38 @@ namespace Tik_Tac_Toe
         private void mainForm_Load2(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMultiplayerOnline_Click(object sender, EventArgs e)
+        {
+            startForm3 = new StartForm3();
+            startForm3.OKPressed += new System.EventHandler(this.multiPlayerOnlineOK_Click);
+            startForm3.ShowDialog();
+        }
+
+        private void multiPlayerOnlineOK_Click(object sender, EventArgs e)
+        {
+            if(startForm3.isClient)
+            {
+                this.game = new MultiplayerOnlineGame(true,startForm3.ip, startForm3.playerName);
+
+            }
+            if(startForm3.isServer)
+            {
+
+                this.game = new MultiplayerOnlineGame(false, startForm3.ip, startForm3.playerName);
+            }
+            else
+            {
+                logger.Error("Invalid multiplayer game request." + startForm3.isServer + " and " + startForm3.isClient);
+            }
+
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+            startForm3.Dispose();
+
+
+            gamePanel.Visible = true;
         }
 
     }
