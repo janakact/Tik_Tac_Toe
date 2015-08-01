@@ -18,7 +18,8 @@ namespace Tik_Tac_Toe
         public const int GoingOn = 0,
                             Draw = 2,
                             Win = 10,
-                            WaitingForConnection = 100;
+                            WaitingForConnection = 100,
+                            Disconected = 200;
 
         protected int[,] table;
         
@@ -166,6 +167,7 @@ namespace Tik_Tac_Toe
         protected void updateMove(int row, int col, int playerId)
         {
             logger.Info("Move updated row:" + row + " col:" + col + " playerId:" + playerId);
+            //if(getWinner==)
             table[row, col] = playerId;
             updatePointsAndCalculateWinner(); //Calculate points
         }
@@ -193,6 +195,11 @@ namespace Tik_Tac_Toe
             callUpdate();
         }
 
+        public void setState(int s)
+        {
+            state = s;
+        }
+
         protected void callUpdate()
         {
             if (Update != null)
@@ -203,6 +210,8 @@ namespace Tik_Tac_Toe
             else
                 logger.Error("No listner to do the interface update");
         }
+
+
 
     }
 

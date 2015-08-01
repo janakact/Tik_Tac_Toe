@@ -7,7 +7,7 @@ using log4net;
 
 namespace Tik_Tac_Toe
 {
-    class SinglePlayerGame : Game
+    public class SinglePlayerGame : Game
     {
         //Difficulties
         public const int   EasyLevel = 0,
