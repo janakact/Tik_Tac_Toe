@@ -55,7 +55,7 @@ namespace Tik_Tac_Toe
             game.reset(true);
 
             //TcpClient tcp = new TcpClient();
-        }
+        } 
 
         private void updateInterface(object sender, EventArgs e) //To Ravindu: Improve this function
         {

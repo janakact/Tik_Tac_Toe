@@ -45,7 +45,7 @@ namespace Tik_Tac_Toe
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked)
+            if (this.radioButton2.Checked)
             {
                 difficulty = SinglePlayerGame.MediumLevel;
             }
@@ -53,7 +53,7 @@ namespace Tik_Tac_Toe
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked)
+            if (this.radioButton3.Checked)
             {
                 difficulty = SinglePlayerGame.HardLevel;
             }
