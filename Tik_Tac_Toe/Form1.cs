@@ -78,7 +78,7 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
-                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Start New Game? \n",
+                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,
                                                          MessageBoxIcon.Information
@@ -87,11 +87,15 @@ namespace Tik_Tac_Toe
                 {
                     game.reset(false);
                 }
+                if (gameResult == DialogResult.No)
+                {
+                    game.reset(false);
+                }
             }
 
             else
             { 
-                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Start New Game?",
+                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Do you want to continue this game session?",
                                                          "Game Result",
                                                          MessageBoxButtons.YesNo,//convert this into continue & start new session
                                                          MessageBoxIcon.Information
@@ -99,6 +103,10 @@ namespace Tik_Tac_Toe
                 if (gameResult1 == DialogResult.Yes)
                 {
                     game.reset(false);
+                }
+                if (gameResult1 == DialogResult.No)
+                {
+                    game.reset(true);
                 }
             }
           }
@@ -133,6 +141,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
+           
         }
 
 
@@ -166,11 +175,7 @@ namespace Tik_Tac_Toe
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
             startForm2.ShowDialog();
             
-        /*    this.game = new MultiplayerOfflineGame("", "Name1");
-            this.game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
 
-            gamePanel.Visible = true;*/
         }
         private void multiPlayerOK_Click(object sender, EventArgs e)
         {
@@ -182,6 +187,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
+      
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -193,6 +199,13 @@ namespace Tik_Tac_Toe
         {
 
         }
+
+        private void gamePanel_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+
 
     }
 }

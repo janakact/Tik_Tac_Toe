@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using log4net;
 namespace Tik_Tac_Toe
 {
     public partial class StartForm : Form
@@ -16,6 +16,8 @@ namespace Tik_Tac_Toe
         public int difficulty;
         
         public event EventHandler OKPressed; // Eevnt handler 
+        private static readonly ILog logger = LogManager.GetLogger(typeof(StartForm));
+
 
         public StartForm()
         {
@@ -61,6 +63,7 @@ namespace Tik_Tac_Toe
         {
             if (OKPressed != null)
             {
+                //logger.("OK button pressed");
                 OKPressed(this, EventArgs.Empty);
             }
             this.Hide();
