@@ -9,7 +9,7 @@ namespace Tik_Tac_Toe
     public class MultiplayerOfflineGame:Game
     {
 
-        private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(MultiplayerOfflineGame));
         private int nextPlayerId; // 1 or -1
         public MultiplayerOfflineGame(String name1, String name2):base()
         {

@@ -77,7 +77,7 @@ namespace Tik_Tac_Toe_Test
             game = new SinglePlayerGame("Player1", 1, SinglePlayerGame.HardLevel);
             Random rnd = new Random();
             List<int> zeroList = new List<int>();
-            //User cannot any random game
+            //User cannot win any random game
             while(game.getWinner()==0 && zeroList.Count!=0)
             {
                 
@@ -87,6 +87,7 @@ namespace Tik_Tac_Toe_Test
                 int move = zeroList[rnd.Next(0, zeroList.Count)];
                 zeroList.RemoveRange(0, zeroList.Count);
                 game.updateMove(move / 3, move % 3);
+                
             }
             Assert.AreNotEqual(1, game.getWinner(), "Lol");
         }

@@ -45,7 +45,7 @@ namespace Tik_Tac_Toe
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked)
+            if (this.radioButton2.Checked)
             {
                 difficulty = SinglePlayerGame.MediumLevel;
             }
@@ -53,7 +53,7 @@ namespace Tik_Tac_Toe
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked)
+            if (this.radioButton3.Checked)
             {
                 difficulty = SinglePlayerGame.HardLevel;
             }
@@ -61,6 +61,7 @@ namespace Tik_Tac_Toe
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "") singlePlayerName = "Player1";
             if (OKPressed != null)
             {
                 //logger.("OK button pressed");
