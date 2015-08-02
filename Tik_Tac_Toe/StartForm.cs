@@ -61,6 +61,7 @@ namespace Tik_Tac_Toe
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == "") singlePlayerName = "Player1";
             if (OKPressed != null)
             {
                 //logger.("OK button pressed");

@@ -19,7 +19,7 @@ namespace Tik_Tac_Toe
 {
     public partial class mainForm : Form
     {
-
+        Color mouseMoveBackColor = Color.FromArgb(30, Color.Black);
         private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
         public mainForm()
         {
@@ -35,19 +35,26 @@ namespace Tik_Tac_Toe
         StartForm3 startForm3;
         private void InitializeGameComponent()
         {
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             //Our Codes
             this.btns = new System.Windows.Forms.Button[9];
             for (int i = 0; i < 9; i++)
             {
                 btns[i] = new System.Windows.Forms.Button();
                 this.gamePanel.Controls.Add(btns[i]);
-                this.btns[i].Location = new System.Drawing.Point((i % 3) * 60, (i / 3) * 60);
+                this.btns[i].Location = new System.Drawing.Point((i % 3) * 100, (i / 3) *100);
                 this.btns[i].Name = "btn" + i;
-                this.btns[i].Size = new System.Drawing.Size(50, 50);
+                this.btns[i].Size = new System.Drawing.Size(90, 90);
                 this.btns[i].TabIndex = i+3;
                 //this.btns[i].UseVisualStyleBackColor = true;
                 this.btns[i].Click += new System.EventHandler(this.btn_Click);
-                this.btns[i].BackColor = Color.Green;
+                this.btns[i].FlatAppearance.BorderSize = 0;
+                this.btns[i].FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+                this.btns[i].FlatAppearance.MouseOverBackColor = mouseMoveBackColor;
+                this.btns[i].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+
+                this.btns[i].BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            
             }
 
             this.game = new MultiplayerOfflineGame("Name1", "Name1");
@@ -64,15 +71,19 @@ namespace Tik_Tac_Toe
             {
                 if (table[i / 3, i % 3] == 1)
                 {
-                    btns[i].BackColor = Color.Red;
+                    btns[i].BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.red;
+                    btns[i].FlatAppearance.MouseOverBackColor = Color.Transparent;
                 }
                 else if(table[i / 3, i % 3] == -1)
                 {
-                    btns[i].BackColor = Color.Blue;
+                    btns[i].BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.blue;
+                    btns[i].FlatAppearance.MouseOverBackColor = Color.Transparent;
                 }
                 else
                 {
-                    btns[i].BackColor = Color.Green;
+                    btns[i].BackgroundImage = btnReset.BackgroundImage;
+
+                    btns[i].FlatAppearance.MouseOverBackColor = mouseMoveBackColor;
                 }
             }
 
@@ -253,6 +264,42 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
+        }
+
+        //Global variables;
+        private bool _dragging = false;
+        private Point _offset;
+        private Point _start_point = new Point(0, 0);
+        private void mainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
+            }
+
+        }
+
+        private void mainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            _dragging = true;  // _dragging is your variable flag
+            _start_point = new Point(e.X, e.Y);
+        }
+
+        private void mainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false; 
+        }
+
+        private void lblPlayer2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
     }
