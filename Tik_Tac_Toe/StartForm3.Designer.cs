@@ -69,6 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 13);
@@ -86,6 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(13, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
@@ -96,6 +98,7 @@
             // btnClient
             // 
             this.btnClient.AutoSize = true;
+            this.btnClient.BackColor = System.Drawing.Color.Transparent;
             this.btnClient.Checked = true;
             this.btnClient.Location = new System.Drawing.Point(16, 56);
             this.btnClient.Name = "btnClient";
@@ -103,24 +106,26 @@
             this.btnClient.TabIndex = 6;
             this.btnClient.TabStop = true;
             this.btnClient.Text = "As a client";
-            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.UseVisualStyleBackColor = false;
             this.btnClient.CheckedChanged += new System.EventHandler(this.btnClient_CheckedChanged);
             // 
             // btnServer
             // 
             this.btnServer.AutoSize = true;
+            this.btnServer.BackColor = System.Drawing.Color.Transparent;
             this.btnServer.Location = new System.Drawing.Point(170, 56);
             this.btnServer.Name = "btnServer";
             this.btnServer.Size = new System.Drawing.Size(78, 17);
             this.btnServer.TabIndex = 7;
             this.btnServer.Text = "As a server";
-            this.btnServer.UseVisualStyleBackColor = true;
+            this.btnServer.UseVisualStyleBackColor = false;
             this.btnServer.CheckedChanged += new System.EventHandler(this.btnServer_CheckedChanged);
             // 
             // StartForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
             this.ClientSize = new System.Drawing.Size(321, 172);
             this.Controls.Add(this.btnServer);
             this.Controls.Add(this.btnClient);
