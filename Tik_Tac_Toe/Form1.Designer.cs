@@ -77,6 +77,7 @@
             this.btnMultiplayerOnline.TabIndex = 2;
             this.btnMultiplayerOnline.Text = "Multiplayer (online)";
             this.btnMultiplayerOnline.UseVisualStyleBackColor = true;
+            this.btnMultiplayerOnline.Click += new System.EventHandler(this.btnMultiplayerOnline_Click);
             // 
             // btnMultiplayerOffline
             // 
@@ -125,6 +126,8 @@
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlayer1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblPlayer1.Location = new System.Drawing.Point(268, 9);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(69, 13);
@@ -168,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ttt1;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(560, 241);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.gamePanel);
