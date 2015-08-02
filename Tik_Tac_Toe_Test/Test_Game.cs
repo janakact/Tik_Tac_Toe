@@ -20,6 +20,8 @@ namespace Tik_Tac_Toe_Test
             Assert.AreEqual(0, game.getPlayer(-1).points);
             Assert.AreEqual(0, game.getPlayer(1).points);
         }
+
+
         [TestMethod]
         public void AddPlayers()
         {
@@ -91,6 +93,9 @@ namespace Tik_Tac_Toe_Test
             }
             Assert.AreNotEqual(1, game.getWinner(), "Lol");
         }
+
+
+
         #endregion
     }
 }
