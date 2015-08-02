@@ -55,7 +55,7 @@
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
             this.homePanel.ForeColor = System.Drawing.Color.Black;
-            this.homePanel.Location = new System.Drawing.Point(85, 12);
+            this.homePanel.Location = new System.Drawing.Point(34, 7);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(198, 311);
             this.homePanel.TabIndex = 0;
@@ -202,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.back5;
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(801, 335);
             this.ControlBox = false;
