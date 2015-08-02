@@ -36,7 +36,7 @@ namespace Tik_Tac_Toe
         private void InitializeGameComponent()
         {
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //Our Codes
+            //Our Codes   
             this.btns = new System.Windows.Forms.Button[9];
             for (int i = 0; i < 9; i++)
             {
