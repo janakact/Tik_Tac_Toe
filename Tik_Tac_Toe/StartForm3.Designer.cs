@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtIPAdr = new System.Windows.Forms.TextBox();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnClient = new System.Windows.Forms.RadioButton();
-            this.btnServer = new System.Windows.Forms.RadioButton();
+            this.btnRed = new System.Windows.Forms.RadioButton();
+            this.btnBlue = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // txtIPAdr
+            // txtPath
             // 
-            this.txtIPAdr.Location = new System.Drawing.Point(16, 117);
-            this.txtIPAdr.Name = "txtIPAdr";
-            this.txtIPAdr.Size = new System.Drawing.Size(300, 20);
-            this.txtIPAdr.TabIndex = 0;
-            this.txtIPAdr.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPath.Location = new System.Drawing.Point(15, 106);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(300, 20);
+            this.txtPath.TabIndex = 0;
+            this.txtPath.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnOK
             // 
             this.btnOK.BackColor = System.Drawing.Color.Transparent;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(161, 143);
+            this.btnOK.Location = new System.Drawing.Point(159, 132);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(242, 143);
+            this.btnCancel.Location = new System.Drawing.Point(240, 132);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -76,9 +76,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(13, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 13);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Enter the IP address of the server.";
+            this.label1.Text = "Shared directory path";
             // 
             // txtName
             // 
@@ -99,46 +99,45 @@
             this.label2.Text = "Your Name:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // btnClient
+            // btnRed
             // 
-            this.btnClient.AutoSize = true;
-            this.btnClient.BackColor = System.Drawing.Color.Transparent;
-            this.btnClient.Checked = true;
-            this.btnClient.Location = new System.Drawing.Point(16, 56);
-            this.btnClient.Name = "btnClient";
-            this.btnClient.Size = new System.Drawing.Size(74, 17);
-            this.btnClient.TabIndex = 6;
-            this.btnClient.TabStop = true;
-            this.btnClient.Text = "As a client";
-            this.btnClient.UseVisualStyleBackColor = false;
-            this.btnClient.CheckedChanged += new System.EventHandler(this.btnClient_CheckedChanged);
+            this.btnRed.AutoSize = true;
+            this.btnRed.BackColor = System.Drawing.Color.Transparent;
+            this.btnRed.Checked = true;
+            this.btnRed.Location = new System.Drawing.Point(16, 56);
+            this.btnRed.Name = "btnRed";
+            this.btnRed.Size = new System.Drawing.Size(45, 17);
+            this.btnRed.TabIndex = 6;
+            this.btnRed.TabStop = true;
+            this.btnRed.Text = "Red";
+            this.btnRed.UseVisualStyleBackColor = false;
+            this.btnRed.CheckedChanged += new System.EventHandler(this.btnClient_CheckedChanged);
             // 
-            // btnServer
+            // btnBlue
             // 
-            this.btnServer.AutoSize = true;
-            this.btnServer.BackColor = System.Drawing.Color.Transparent;
-            this.btnServer.Location = new System.Drawing.Point(170, 56);
-            this.btnServer.Name = "btnServer";
-            this.btnServer.Size = new System.Drawing.Size(78, 17);
-            this.btnServer.TabIndex = 7;
-            this.btnServer.Text = "As a server";
-            this.btnServer.UseVisualStyleBackColor = false;
-            this.btnServer.CheckedChanged += new System.EventHandler(this.btnServer_CheckedChanged);
+            this.btnBlue.AutoSize = true;
+            this.btnBlue.BackColor = System.Drawing.Color.Transparent;
+            this.btnBlue.Location = new System.Drawing.Point(159, 56);
+            this.btnBlue.Name = "btnBlue";
+            this.btnBlue.Size = new System.Drawing.Size(46, 17);
+            this.btnBlue.TabIndex = 7;
+            this.btnBlue.Text = "Blue";
+            this.btnBlue.UseVisualStyleBackColor = false;
+            this.btnBlue.CheckedChanged += new System.EventHandler(this.btnServer_CheckedChanged);
             // 
             // StartForm3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
-            this.ClientSize = new System.Drawing.Size(321, 172);
-            this.Controls.Add(this.btnServer);
-            this.Controls.Add(this.btnClient);
+            this.ClientSize = new System.Drawing.Size(327, 167);
+            this.Controls.Add(this.btnBlue);
+            this.Controls.Add(this.btnRed);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.txtIPAdr);
+            this.Controls.Add(this.txtPath);
             this.Name = "StartForm3";
             this.Text = "Connect To the server";
             this.Load += new System.EventHandler(this.StartForm3_Load);
@@ -149,13 +148,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtIPAdr;
+        private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton btnClient;
-        private System.Windows.Forms.RadioButton btnServer;
+        private System.Windows.Forms.RadioButton btnRed;
+        private System.Windows.Forms.RadioButton btnBlue;
     }
 }

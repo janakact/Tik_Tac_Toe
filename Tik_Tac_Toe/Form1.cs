@@ -82,7 +82,6 @@ namespace Tik_Tac_Toe
                 else
                 {
                     btns[i].BackgroundImage = btnReset.BackgroundImage;
-
                     btns[i].FlatAppearance.MouseOverBackColor = mouseMoveBackColor;
                 }
             }
@@ -244,7 +243,7 @@ namespace Tik_Tac_Toe
         private void multiPlayerOnlineOK_Click(object sender, EventArgs e)
         {
 
-            game = new MultiplayerOnlineGame("haha", "haha");
+            game = new MultiplayerOnlineGame(startForm3.path, startForm3.playerName,startForm3.isRed);
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
             startForm3.Dispose();
@@ -286,7 +285,7 @@ namespace Tik_Tac_Toe
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Environment.Exit(0);
         }
 
         private void lblPlayer1_Click(object sender, EventArgs e)

@@ -11,10 +11,9 @@ namespace Tik_Tac_Toe
 {
     public partial class StartForm3 : Form
     {
-        public bool isServer = false;
-        public bool isClient = true;
-        public String playerName;
-        public String ip;
+        public bool isRed = true;
+        public String playerName = "Player1";
+        public String path;
         public event EventHandler OKPressed; // Eevnt handler 
 
         public StartForm3()
@@ -29,6 +28,11 @@ namespace Tik_Tac_Toe
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
+            isRed = btnRed.Checked;
+            path = txtPath.Text;
+            playerName = txtName.Text;
+
             if (OKPressed != null)
             {
                 OKPressed(this, EventArgs.Empty);
@@ -38,7 +42,6 @@ namespace Tik_Tac_Toe
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ip = txtIPAdr.Text;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -53,25 +56,14 @@ namespace Tik_Tac_Toe
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            playerName = txtName.Text;
         }
 
         private void btnClient_CheckedChanged(object sender, EventArgs e)
         {
-            isClient = btnClient.Checked;
-            if(isClient)
-            {
-                txtIPAdr.Enabled = true;
-            }
-            else
-            {
-                txtIPAdr.Enabled = false;
-            }
         }
 
         private void btnServer_CheckedChanged(object sender, EventArgs e)
         {
-            isServer = btnServer.Checked;
         }
     }
 }
