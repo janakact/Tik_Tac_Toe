@@ -55,7 +55,7 @@
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
             this.homePanel.ForeColor = System.Drawing.Color.Black;
-            this.homePanel.Location = new System.Drawing.Point(85, 12);
+            this.homePanel.Location = new System.Drawing.Point(34, 7);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(198, 311);
             this.homePanel.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(4, 185);
+            this.btnStop.Location = new System.Drawing.Point(4, 251);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(190, 39);
             this.btnStop.TabIndex = 3;
@@ -84,7 +84,7 @@
             this.btnMultiplayerOnline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOnline.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplayerOnline.Location = new System.Drawing.Point(4, 112);
+            this.btnMultiplayerOnline.Location = new System.Drawing.Point(5, 124);
             this.btnMultiplayerOnline.Name = "btnMultiplayerOnline";
             this.btnMultiplayerOnline.Size = new System.Drawing.Size(190, 39);
             this.btnMultiplayerOnline.TabIndex = 2;
@@ -100,7 +100,7 @@
             this.btnMultiplayerOffline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOffline.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplayerOffline.Location = new System.Drawing.Point(4, 62);
+            this.btnMultiplayerOffline.Location = new System.Drawing.Point(3, 64);
             this.btnMultiplayerOffline.Name = "btnMultiplayerOffline";
             this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 39);
             this.btnMultiplayerOffline.TabIndex = 1;
@@ -131,9 +131,9 @@
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.label3);
-            this.gamePanel.Location = new System.Drawing.Point(302, 20);
+            this.gamePanel.Location = new System.Drawing.Point(271, 12);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(423, 298);
+            this.gamePanel.Size = new System.Drawing.Size(454, 306);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -161,6 +161,7 @@
             this.lblPlayer1.Size = new System.Drawing.Size(100, 20);
             this.lblPlayer1.TabIndex = 2;
             this.lblPlayer1.Text = "Player1 Wins";
+            this.lblPlayer1.Click += new System.EventHandler(this.lblPlayer1_Click);
             // 
             // lblPlayer2
             // 
@@ -204,7 +205,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.back5;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(801, 335);
+            this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.gamePanel);

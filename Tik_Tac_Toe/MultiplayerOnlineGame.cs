@@ -29,6 +29,7 @@ namespace Tik_Tac_Toe
         int networkPlayerI = 1;
         String writePath = "E:\\a.txt";
         String readPath = "E:\\b.txt";
+        String txtBackup = "";
         
         private Thread listenerThread;
 
@@ -45,8 +46,7 @@ namespace Tik_Tac_Toe
         {
             while (!closed)
             {
-                String txt = File.ReadAllText(readPath);
-                read(txt);
+                read();
                 Thread.Sleep(1000);
                 logger.Info("Reading");
             }
@@ -82,13 +82,17 @@ namespace Tik_Tac_Toe
             File.WriteAllText(writePath, txt);
         }
 
-        private void read(String txt)
+        private void read()
         {
+            String txt = File.ReadAllText(readPath);
+            if (txt == txtBackup) return;
+            txtBackup = txt;
             //Update table
             for(int i=0; i<9; i++)
             {
                 logger.Info(txt[i] - '0');
-                table[i / 3, i % 3] = txt[i] == 2 ? -1 : txt[i]-'0';
+                table[i / 3, i % 3] = txt[i] == '2' ? -1 : txt[i]-'0';
+                int x = txt[i] - '0';
             }
 
             callUpdate();

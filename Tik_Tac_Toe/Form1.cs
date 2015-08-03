@@ -289,5 +289,10 @@ namespace Tik_Tac_Toe
             this.Dispose();
         }
 
+        private void lblPlayer1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
