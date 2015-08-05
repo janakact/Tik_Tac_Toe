@@ -212,8 +212,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.back5;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ruled_paper;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
             this.Controls.Add(this.lblState);
