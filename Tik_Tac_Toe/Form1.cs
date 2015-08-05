@@ -83,6 +83,7 @@ namespace Tik_Tac_Toe
                 {
                     btns[i].BackgroundImage = btnReset.BackgroundImage;
                     btns[i].FlatAppearance.MouseOverBackColor = mouseMoveBackColor;
+                    btns[i].BackColor = Color.Transparent;
                 }
             }
 
@@ -106,7 +107,10 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
-                
+                int[] winCells = game.getWinCells();
+                for (int i = 0; i < 3; i++)
+                    btns[winCells[i]].BackColor = Color.FromArgb(40,Color.Black);
+
                 lblResult.Text = "win";
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
@@ -120,7 +124,9 @@ namespace Tik_Tac_Toe
                 if (gameResult == DialogResult.No)
                 {
                     game.reset(false);
-            }
+                }
+
+                
             }
 
             else
@@ -271,7 +277,7 @@ namespace Tik_Tac_Toe
         private void mainForm_MouseDown(object sender, MouseEventArgs e)
         {
 
-            _dragging = true;  // _dragging is your variable flag
+             _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
 
