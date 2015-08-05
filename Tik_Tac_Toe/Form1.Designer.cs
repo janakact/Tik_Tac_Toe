@@ -39,7 +39,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
             this.lblState = new System.Windows.Forms.Label();
             this.p = new System.IO.FileSystemWatcher();
             this.homePanel.SuspendLayout();
@@ -64,13 +64,14 @@
             // 
             this.btnStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnStop.FlatAppearance.BorderSize = 0;
             this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStop.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(4, 251);
+            this.btnStop.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.btnStop.Location = new System.Drawing.Point(3, 250);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(190, 39);
+            this.btnStop.Size = new System.Drawing.Size(190, 30);
             this.btnStop.TabIndex = 3;
             this.btnStop.Text = "Close";
             this.btnStop.UseVisualStyleBackColor = false;
@@ -78,15 +79,17 @@
             // 
             // btnMultiplayerOnline
             // 
-            this.btnMultiplayerOnline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnMultiplayerOnline.BackColor = System.Drawing.Color.Transparent;
             this.btnMultiplayerOnline.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMultiplayerOnline.FlatAppearance.BorderSize = 0;
             this.btnMultiplayerOnline.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOnline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultiplayerOnline.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplayerOnline.Location = new System.Drawing.Point(5, 124);
+            this.btnMultiplayerOnline.Font = new System.Drawing.Font("Informal Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMultiplayerOnline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMultiplayerOnline.Location = new System.Drawing.Point(3, 105);
             this.btnMultiplayerOnline.Name = "btnMultiplayerOnline";
-            this.btnMultiplayerOnline.Size = new System.Drawing.Size(190, 39);
+            this.btnMultiplayerOnline.Size = new System.Drawing.Size(190, 31);
             this.btnMultiplayerOnline.TabIndex = 2;
             this.btnMultiplayerOnline.Text = "Multiplayer (online)";
             this.btnMultiplayerOnline.UseVisualStyleBackColor = false;
@@ -96,13 +99,15 @@
             // 
             this.btnMultiplayerOffline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOffline.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMultiplayerOffline.FlatAppearance.BorderSize = 0;
             this.btnMultiplayerOffline.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOffline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMultiplayerOffline.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMultiplayerOffline.Location = new System.Drawing.Point(3, 64);
+            this.btnMultiplayerOffline.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.btnMultiplayerOffline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMultiplayerOffline.Location = new System.Drawing.Point(5, 59);
             this.btnMultiplayerOffline.Name = "btnMultiplayerOffline";
-            this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 39);
+            this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 31);
             this.btnMultiplayerOffline.TabIndex = 1;
             this.btnMultiplayerOffline.Text = "Multiplayer (offline)";
             this.btnMultiplayerOffline.UseVisualStyleBackColor = false;
@@ -111,14 +116,15 @@
             // btnSinglePlayer
             // 
             this.btnSinglePlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnSinglePlayer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSinglePlayer.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnSinglePlayer.FlatAppearance.BorderSize = 0;
             this.btnSinglePlayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSinglePlayer.Font = new System.Drawing.Font("Gabriola", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSinglePlayer.Location = new System.Drawing.Point(3, 3);
+            this.btnSinglePlayer.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.btnSinglePlayer.Location = new System.Drawing.Point(5, 15);
             this.btnSinglePlayer.Name = "btnSinglePlayer";
-            this.btnSinglePlayer.Size = new System.Drawing.Size(190, 39);
+            this.btnSinglePlayer.Size = new System.Drawing.Size(190, 28);
             this.btnSinglePlayer.TabIndex = 0;
             this.btnSinglePlayer.Text = "Single Player";
             this.btnSinglePlayer.UseVisualStyleBackColor = false;
@@ -130,20 +136,22 @@
             this.gamePanel.Controls.Add(this.btnReset);
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
-            this.gamePanel.Controls.Add(this.label3);
+            this.gamePanel.Controls.Add(this.lblResult);
             this.gamePanel.Location = new System.Drawing.Point(271, 12);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(474, 306);
+            this.gamePanel.Size = new System.Drawing.Size(454, 306);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // btnReset
             // 
+            this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Location = new System.Drawing.Point(307, 249);
+            this.btnReset.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.btnReset.Location = new System.Drawing.Point(310, 239);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(113, 36);
             this.btnReset.TabIndex = 6;
@@ -154,11 +162,11 @@
             // lblPlayer1
             // 
             this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer1.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPlayer1.Location = new System.Drawing.Point(303, 31);
+            this.lblPlayer1.Location = new System.Drawing.Point(306, 39);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(100, 20);
+            this.lblPlayer1.Size = new System.Drawing.Size(97, 21);
             this.lblPlayer1.TabIndex = 2;
             this.lblPlayer1.Text = "Player1 Wins";
             this.lblPlayer1.Click += new System.EventHandler(this.lblPlayer1_Click);
@@ -166,24 +174,25 @@
             // lblPlayer2
             // 
             this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlayer2.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer2.ForeColor = System.Drawing.Color.Brown;
-            this.lblPlayer2.Location = new System.Drawing.Point(306, 68);
+            this.lblPlayer2.Location = new System.Drawing.Point(306, 59);
             this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(61, 20);
+            this.lblPlayer2.Size = new System.Drawing.Size(62, 21);
             this.lblPlayer2.TabIndex = 3;
             this.lblPlayer2.Text = "Player2";
             this.lblPlayer2.Click += new System.EventHandler(this.lblPlayer2_Click);
             // 
-            // label3
+            // lblResult
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(306, 150);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Time";
+            this.lblResult.AutoSize = true;
+            this.lblResult.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.Location = new System.Drawing.Point(306, 150);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 20);
+            this.lblResult.TabIndex = 4;
+            this.lblResult.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblState
             // 
@@ -202,7 +211,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.back5;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
@@ -235,7 +245,7 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblPlayer1;
         private System.Windows.Forms.Label lblPlayer2;
-        private System.Windows.Forms.Label label3; //Buttons 
+        private System.Windows.Forms.Label lblResult; //Buttons 
         private Game game;
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Button btnReset;
