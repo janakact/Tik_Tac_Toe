@@ -65,7 +65,7 @@
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
             this.homePanel.ForeColor = System.Drawing.Color.Black;
-            this.homePanel.Location = new System.Drawing.Point(34, 7);
+            this.homePanel.Location = new System.Drawing.Point(3, 7);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(198, 311);
             this.homePanel.TabIndex = 0;
@@ -148,9 +148,9 @@
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.lblResult);
-            this.gamePanel.Location = new System.Drawing.Point(271, 12);
+            this.gamePanel.Location = new System.Drawing.Point(202, 12);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(454, 306);
+            this.gamePanel.Size = new System.Drawing.Size(523, 306);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -317,7 +317,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ruled_paper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(770, 335);
+            this.ClientSize = new System.Drawing.Size(704, 321);
             this.ControlBox = false;
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.gamePanel);
