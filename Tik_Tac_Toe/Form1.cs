@@ -106,6 +106,7 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
+                
                 lblResult.Text = "win";
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
