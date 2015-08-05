@@ -50,7 +50,6 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
@@ -269,12 +268,14 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
-            // SinglePlayerName
+            // Hard
             // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
-            this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
-            this.SinglePlayerName.TabIndex = 10;
+            this.Hard.Location = new System.Drawing.Point(183, 43);
+            this.Hard.Name = "Hard";
+            this.Hard.Size = new System.Drawing.Size(59, 24);
+            this.Hard.TabIndex = 13;
+            this.Hard.Text = "Hard";
+            this.Hard.CheckedChanged += new System.EventHandler(this.Hard_CheckedChanged);
             // 
             // Medium
             // 
@@ -288,7 +289,7 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // button1
+            // Easy
             // 
             this.Easy.AutoSize = true;
             this.Easy.Location = new System.Drawing.Point(17, 49);
@@ -299,16 +300,6 @@
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(143, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,7 +309,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
@@ -335,7 +325,6 @@
             this.singlePlayerPanel.ResumeLayout(false);
             this.singlePlayerPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,7 +352,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
