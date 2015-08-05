@@ -211,7 +211,63 @@ namespace Tik_Tac_Toe
                 logger.Error("No listner to do the interface update");
         }
 
+        public int[] getWinCells()
+        {
+            if (getWinner() == 0 | getWinner() == 2) return null;
+            int[] lst = new int[3];
 
+            int[,] grid = table;
+
+            int total3 = 0, total4 = 0, total = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                int total1 = 0, total2 = 0;
+
+                for (int j = 0; j < 3; j++)
+                {
+                    if (grid[i, j] != 0)
+                        total += 1;
+
+                    total1 += grid[i, j];
+                    total2 += grid[j, i];
+                }
+
+                //check for rows cols
+                if (total1 == -3 || total1 == 3)
+                {
+                    for(int x=0; x<3;x++)
+                        lst[x] = x*3+i;
+                    return lst;
+                }
+                if (total2 == -3 || total2 == 3)
+                {
+                    for(int x=0; x<3;x++)
+                        lst[x] = x*3+i;
+                    return lst;
+                }
+                total3 += grid[i, i];
+                total4 += grid[i, 2 - i];
+
+            }
+
+            //check for cross lines
+            if (total3 == -3 || total3 == 3)
+            {
+                for (int x = 0; x < 3; x++)
+                    lst[x] = x * 3 +x;
+                return lst;
+            }
+            if (total4 == 3 || total4 == -3)
+            {
+                for (int x = 0; x < 3; x++)
+                    lst[x] = x * 3 + 2 - x;
+                return lst;
+            }
+
+            if (total == 9) return lst; // 2 stands for drow
+
+            return lst;
+        }
 
     }
 

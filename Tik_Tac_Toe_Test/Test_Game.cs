@@ -95,6 +95,31 @@ namespace Tik_Tac_Toe_Test
         }
 
 
+        [TestMethod]
+        public void Get_WinnerCell_Method()
+        {
+
+            game = new MultiplayerOfflineGame("Me" , "You");
+            game.updateMove(0, 0);
+            game.updateMove(0, 1);
+            Assert.AreEqual(0, game.getWinner());
+            game.updateMove(1, 0);
+            Assert.AreEqual(0, game.getWinner());
+            game.updateMove(1, 1);
+            Assert.AreEqual(0, game.getWinner());
+
+            game.updateMove(2, 0);
+
+            int win = game.getWinner();
+            int[] lst = new int[3]{0,3,6};;
+
+            int[] l = game.getWinCells();
+            for (int i = 0; i < 3; i++ )
+                Assert.AreEqual(lst[i], l[i]);
+
+        }
+
+        
 
         #endregion
     }

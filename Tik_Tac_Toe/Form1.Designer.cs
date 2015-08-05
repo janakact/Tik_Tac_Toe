@@ -133,7 +133,7 @@
             this.gamePanel.Controls.Add(this.label3);
             this.gamePanel.Location = new System.Drawing.Point(271, 12);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(454, 306);
+            this.gamePanel.Size = new System.Drawing.Size(474, 306);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -202,8 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.back5;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
