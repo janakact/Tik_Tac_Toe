@@ -43,13 +43,13 @@
             this.lblState = new System.Windows.Forms.Label();
             this.p = new System.IO.FileSystemWatcher();
             this.singlePlayerPanel = new System.Windows.Forms.Panel();
-            this.Easy = new System.Windows.Forms.RadioButton();
-            this.Medium = new System.Windows.Forms.RadioButton();
-            this.Hard = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SinglePlayerName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SinglePlayerName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Hard = new System.Windows.Forms.RadioButton();
+            this.Medium = new System.Windows.Forms.RadioButton();
+            this.Easy = new System.Windows.Forms.RadioButton();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
@@ -232,16 +232,52 @@
             this.singlePlayerPanel.TabIndex = 6;
             this.singlePlayerPanel.Visible = false;
             // 
-            // Easy
+            // button2
             // 
-            this.Easy.AutoSize = true;
-            this.Easy.Location = new System.Drawing.Point(17, 49);
-            this.Easy.Name = "Easy";
-            this.Easy.Size = new System.Drawing.Size(48, 17);
-            this.Easy.TabIndex = 6;
-            this.Easy.TabStop = true;
-            this.Easy.Text = "Easy";
-            this.Easy.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(272, 44);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 33);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(272, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // SinglePlayerName
+            // 
+            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
+            this.SinglePlayerName.Name = "SinglePlayerName";
+            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
+            this.SinglePlayerName.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Player Name";
+            // 
+            // Hard
+            // 
+            this.Hard.AutoSize = true;
+            this.Hard.Location = new System.Drawing.Point(194, 49);
+            this.Hard.Name = "Hard";
+            this.Hard.Size = new System.Drawing.Size(48, 17);
+            this.Hard.TabIndex = 8;
+            this.Hard.TabStop = true;
+            this.Hard.Text = "Hard";
+            this.Hard.UseVisualStyleBackColor = true;
             // 
             // Medium
             // 
@@ -255,52 +291,17 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // Hard
+            // Easy
             // 
-            this.Hard.AutoSize = true;
-            this.Hard.Location = new System.Drawing.Point(194, 49);
-            this.Hard.Name = "Hard";
-            this.Hard.Size = new System.Drawing.Size(48, 17);
-            this.Hard.TabIndex = 8;
-            this.Hard.TabStop = true;
-            this.Hard.Text = "Hard";
-            this.Hard.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Player Name";
-            // 
-            // SinglePlayerName
-            // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
-            this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
-            this.SinglePlayerName.TabIndex = 10;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(272, 10);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 31);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(272, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 33);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Easy.AutoSize = true;
+            this.Easy.Location = new System.Drawing.Point(17, 49);
+            this.Easy.Name = "Easy";
+            this.Easy.Size = new System.Drawing.Size(48, 17);
+            this.Easy.TabIndex = 6;
+            this.Easy.TabStop = true;
+            this.Easy.Text = "Easy";
+            this.Easy.UseVisualStyleBackColor = true;
+           
             // 
             // mainForm
             // 
