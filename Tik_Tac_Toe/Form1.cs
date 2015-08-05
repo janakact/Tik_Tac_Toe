@@ -333,11 +333,6 @@ namespace Tik_Tac_Toe
             singlePlayerPanel.Dispose();
         }
 
-        private void Hard_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
     }
 }
