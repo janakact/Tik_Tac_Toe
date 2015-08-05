@@ -217,6 +217,7 @@ namespace Tik_Tac_Toe
             int[] lst = new int[3];
 
             int[,] grid = table;
+            logger.Info("calculating winner cell");
 
             int total3 = 0, total4 = 0, total = 0;
             for (int i = 0; i < 3; i++)
@@ -233,16 +234,16 @@ namespace Tik_Tac_Toe
                 }
 
                 //check for rows cols
-                if (total1 == -3 || total1 == 3)
+                if (total2 == -3 || total2 == 3)
                 {
                     for(int x=0; x<3;x++)
                         lst[x] = x*3+i;
                     return lst;
                 }
-                if (total2 == -3 || total2 == 3)
+                if (total1 == -3 || total1 == 3)
                 {
                     for(int x=0; x<3;x++)
-                        lst[x] = x*3+i;
+                        lst[x] = i*3+x;
                     return lst;
                 }
                 total3 += grid[i, i];
