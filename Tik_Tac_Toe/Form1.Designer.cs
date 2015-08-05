@@ -50,7 +50,6 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
@@ -65,9 +64,9 @@
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
             this.homePanel.ForeColor = System.Drawing.Color.Black;
-            this.homePanel.Location = new System.Drawing.Point(34, 7);
+            this.homePanel.Location = new System.Drawing.Point(12, 7);
             this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(198, 311);
+            this.homePanel.Size = new System.Drawing.Size(184, 311);
             this.homePanel.TabIndex = 0;
             // 
             // btnStop
@@ -147,7 +146,7 @@
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.lblResult);
-            this.gamePanel.Location = new System.Drawing.Point(271, 12);
+            this.gamePanel.Location = new System.Drawing.Point(202, 12);
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(454, 306);
             this.gamePanel.TabIndex = 1;
@@ -269,17 +268,18 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
-            // SinglePlayerName
+            // Hard
             // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
-            this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
-            this.SinglePlayerName.TabIndex = 10;
+            this.Hard.Location = new System.Drawing.Point(188, 45);
+            this.Hard.Name = "Hard";
+            this.Hard.Size = new System.Drawing.Size(54, 24);
+            this.Hard.TabIndex = 13;
+            this.Hard.Text = "Hard";
             // 
             // Medium
             // 
             this.Medium.AutoSize = true;
-            this.Medium.Location = new System.Drawing.Point(90, 48);
+            this.Medium.Location = new System.Drawing.Point(90, 49);
             this.Medium.Name = "Medium";
             this.Medium.Size = new System.Drawing.Size(62, 17);
             this.Medium.TabIndex = 7;
@@ -288,7 +288,7 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // button1
+            // Easy
             // 
             this.Easy.AutoSize = true;
             this.Easy.Location = new System.Drawing.Point(17, 49);
@@ -299,16 +299,6 @@
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(143, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,12 +306,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ruled_paper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(770, 330);
+            this.ClientSize = new System.Drawing.Size(704, 321);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
+            this.DoubleBuffered = true;
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
             this.Load += new System.EventHandler(this.mainForm_Load);
@@ -335,7 +325,6 @@
             this.singlePlayerPanel.ResumeLayout(false);
             this.singlePlayerPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,7 +352,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
