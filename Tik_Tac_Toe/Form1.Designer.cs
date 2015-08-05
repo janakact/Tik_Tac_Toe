@@ -269,16 +269,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
-            // Hard
+            // SinglePlayerName
             // 
-            this.Hard.AutoSize = true;
-            this.Hard.Location = new System.Drawing.Point(194, 49);
-            this.Hard.Name = "Hard";
-            this.Hard.Size = new System.Drawing.Size(48, 17);
-            this.Hard.TabIndex = 8;
-            this.Hard.TabStop = true;
-            this.Hard.Text = "Hard";
-            this.Hard.UseVisualStyleBackColor = true;
+            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
+            this.SinglePlayerName.Name = "SinglePlayerName";
+            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
+            this.SinglePlayerName.TabIndex = 10;
             // 
             // Medium
             // 
@@ -292,7 +288,7 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // Easy
+            // button1
             // 
             this.Easy.AutoSize = true;
             this.Easy.Location = new System.Drawing.Point(17, 49);

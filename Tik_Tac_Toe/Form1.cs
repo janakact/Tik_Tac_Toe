@@ -322,9 +322,9 @@ namespace Tik_Tac_Toe
             game = new SinglePlayerGame(SinglePlayerName.Text, rand.Next(0, 2) == 0 ? 1 : -1,difficulty);
             game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
-            
 
 
+            singlePlayerPanel.Dispose();
             gamePanel.Visible = true;
         }
 
@@ -332,6 +332,7 @@ namespace Tik_Tac_Toe
         {
             singlePlayerPanel.Dispose();
         }
+
 
     }
 }
