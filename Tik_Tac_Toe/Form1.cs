@@ -206,13 +206,16 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-
-            startForm2 = new StartForm2();
+            MultiPlayerOfflinePanel.Visible = true;
+            
+         /*   startForm2 = new StartForm2();
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
-            startForm2.ShowDialog();
+            startForm2.ShowDialog();*/
             
 
         }
+
+        /*
         private void multiPlayerOK_Click(object sender, EventArgs e)
         {
 
@@ -224,7 +227,7 @@ namespace Tik_Tac_Toe
 
             gamePanel.Visible = true;
       
-        }
+        } */
 
         private void mainForm_Load(object sender, EventArgs e)
         {
@@ -324,13 +327,36 @@ namespace Tik_Tac_Toe
             game.reset(true);
 
 
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible = false; ;
             gamePanel.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible = false;
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MultiPlayerOfflinePanel.Visible = false;
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            this.game = new MultiplayerOfflineGame(player1Name.Text,player2Name.Text);
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+
+            MultiPlayerOfflinePanel.Visible = false;
+            gamePanel.Visible = true;
+        }
+
+        private void singlePlayerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 
