@@ -30,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.homePanel = new System.Windows.Forms.Panel();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnMultiplayerOnline = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.playAgain = new System.Windows.Forms.Button();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
@@ -65,7 +66,7 @@
             this.homePanel.Controls.Add(this.btnMultiplayerOffline);
             this.homePanel.Controls.Add(this.btnSinglePlayer);
             this.homePanel.ForeColor = System.Drawing.Color.Black;
-            this.homePanel.Location = new System.Drawing.Point(34, 7);
+            this.homePanel.Location = new System.Drawing.Point(2, 0);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(198, 311);
             this.homePanel.TabIndex = 0;
@@ -143,13 +144,14 @@
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.Transparent;
+            this.gamePanel.Controls.Add(this.playAgain);
             this.gamePanel.Controls.Add(this.btnReset);
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.lblResult);
-            this.gamePanel.Location = new System.Drawing.Point(271, 12);
+            this.gamePanel.Location = new System.Drawing.Point(228, 25);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(454, 306);
+            this.gamePanel.Size = new System.Drawing.Size(496, 306);
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
@@ -161,9 +163,9 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.btnReset.Location = new System.Drawing.Point(310, 239);
+            this.btnReset.Location = new System.Drawing.Point(383, 225);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(113, 36);
+            this.btnReset.Size = new System.Drawing.Size(113, 30);
             this.btnReset.TabIndex = 6;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -269,12 +271,13 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
-            // SinglePlayerName
+            // Hard
             // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
-            this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
-            this.SinglePlayerName.TabIndex = 10;
+            this.Hard.Location = new System.Drawing.Point(162, 45);
+            this.Hard.Name = "Hard";
+            this.Hard.Size = new System.Drawing.Size(104, 24);
+            this.Hard.TabIndex = 13;
+            this.Hard.Text = "Hard";
             // 
             // Medium
             // 
@@ -288,7 +291,7 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // button1
+            // Easy
             // 
             this.Easy.AutoSize = true;
             this.Easy.Location = new System.Drawing.Point(17, 49);
@@ -299,29 +302,34 @@
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // playAgain
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(143, 0);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.playAgain.BackColor = System.Drawing.Color.Transparent;
+            this.playAgain.FlatAppearance.BorderSize = 0;
+            this.playAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playAgain.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.playAgain.Location = new System.Drawing.Point(387, 186);
+            this.playAgain.Name = "playAgain";
+            this.playAgain.Size = new System.Drawing.Size(109, 33);
+            this.playAgain.TabIndex = 7;
+            this.playAgain.Text = "Play Again!";
+            this.playAgain.UseVisualStyleBackColor = false;
+            this.playAgain.Visible = false;
+            this.playAgain.Click += new System.EventHandler(this.button3_Click);
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ruled_paper;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
+            this.DoubleBuffered = true;
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
             this.Load += new System.EventHandler(this.mainForm_Load);
@@ -335,7 +343,6 @@
             this.singlePlayerPanel.ResumeLayout(false);
             this.singlePlayerPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,7 +370,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button playAgain;
     }
 }
 

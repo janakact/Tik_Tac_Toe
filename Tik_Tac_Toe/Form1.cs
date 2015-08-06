@@ -42,7 +42,7 @@ namespace Tik_Tac_Toe
             {
                 btns[i] = new System.Windows.Forms.Button();
                 this.gamePanel.Controls.Add(btns[i]);
-                this.btns[i].Location = new System.Drawing.Point((i % 3) * 100, (i / 3) *100);
+                this.btns[i].Location = new System.Drawing.Point((i % 3) * 110, (i / 3) *100);
                 this.btns[i].Name = "btn" + i;
                 this.btns[i].Size = new System.Drawing.Size(90, 90);
                 this.btns[i].TabIndex = i+3;
@@ -86,7 +86,7 @@ namespace Tik_Tac_Toe
                     btns[i].BackColor = Color.Transparent;
                 }
             }
-
+            playAgain.Visible = false;
             //Increase marks
             lblPlayer1.Text = game.getPlayer(-1).name + " has " + game.getPlayer(-1).points + " points " ;
             lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
@@ -96,6 +96,7 @@ namespace Tik_Tac_Toe
             {
                 gameFinished();
             }
+
         }
 
         private void gameFinished() //To Ravindu
@@ -105,6 +106,7 @@ namespace Tik_Tac_Toe
             //To Do - 
             //      Disable grid,
             //      show reset(Play again) button 
+            /*
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
                 int[] winCells = game.getWinCells();
@@ -144,7 +146,10 @@ namespace Tik_Tac_Toe
                 {
                     game.reset(true);
             }
-          }
+          }*/
+           
+          playAgain.Visible = true;
+            
           }
 
         private void btn_Click(object sender, EventArgs e)
@@ -187,7 +192,7 @@ namespace Tik_Tac_Toe
         {
            
             // have to show this after game started
-            if (game.getWinner() == 0)
+      /*      if (game.getWinner() == 0)
             {
                 DialogResult result= MessageBox.Show("Current game data will be lost. Are you sure you want to continue!!",
                     "Reset Warning",
@@ -200,7 +205,8 @@ namespace Tik_Tac_Toe
                 }
                 
             }
-            else game.reset(false);
+            else game.reset(false);*/
+            game.reset(true);
            
         }
 
@@ -331,6 +337,11 @@ namespace Tik_Tac_Toe
         private void button2_Click(object sender, EventArgs e)
         {
             singlePlayerPanel.Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            game.reset(false);
         }
 
 
