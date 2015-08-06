@@ -42,9 +42,19 @@
             this.lblResult = new System.Windows.Forms.Label();
             this.lblState = new System.Windows.Forms.Label();
             this.p = new System.IO.FileSystemWatcher();
+            this.singlePlayerPanel = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SinglePlayerName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Hard = new System.Windows.Forms.RadioButton();
+            this.Medium = new System.Windows.Forms.RadioButton();
+            this.Easy = new System.Windows.Forms.RadioButton();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
+            this.singlePlayerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // homePanel
@@ -66,7 +76,7 @@
             this.btnStop.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnStop.FlatAppearance.BorderSize = 0;
             this.btnStop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.btnStop.Location = new System.Drawing.Point(3, 250);
@@ -83,11 +93,11 @@
             this.btnMultiplayerOnline.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMultiplayerOnline.FlatAppearance.BorderSize = 0;
             this.btnMultiplayerOnline.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnMultiplayerOnline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnMultiplayerOnline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOnline.Font = new System.Drawing.Font("Informal Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultiplayerOnline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMultiplayerOnline.Location = new System.Drawing.Point(3, 105);
+            this.btnMultiplayerOnline.Location = new System.Drawing.Point(5, 154);
             this.btnMultiplayerOnline.Name = "btnMultiplayerOnline";
             this.btnMultiplayerOnline.Size = new System.Drawing.Size(190, 31);
             this.btnMultiplayerOnline.TabIndex = 2;
@@ -101,13 +111,13 @@
             this.btnMultiplayerOffline.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnMultiplayerOffline.FlatAppearance.BorderSize = 0;
             this.btnMultiplayerOffline.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnMultiplayerOffline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnMultiplayerOffline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnMultiplayerOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOffline.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.btnMultiplayerOffline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMultiplayerOffline.Location = new System.Drawing.Point(5, 59);
+            this.btnMultiplayerOffline.Location = new System.Drawing.Point(3, 83);
             this.btnMultiplayerOffline.Name = "btnMultiplayerOffline";
-            this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 31);
+            this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 35);
             this.btnMultiplayerOffline.TabIndex = 1;
             this.btnMultiplayerOffline.Text = "Multiplayer (offline)";
             this.btnMultiplayerOffline.UseVisualStyleBackColor = false;
@@ -119,12 +129,12 @@
             this.btnSinglePlayer.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.btnSinglePlayer.FlatAppearance.BorderSize = 0;
             this.btnSinglePlayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
-            this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
+            this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSinglePlayer.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.btnSinglePlayer.Location = new System.Drawing.Point(5, 15);
+            this.btnSinglePlayer.Location = new System.Drawing.Point(0, 11);
             this.btnSinglePlayer.Name = "btnSinglePlayer";
-            this.btnSinglePlayer.Size = new System.Drawing.Size(190, 28);
+            this.btnSinglePlayer.Size = new System.Drawing.Size(190, 35);
             this.btnSinglePlayer.TabIndex = 0;
             this.btnSinglePlayer.Text = "Single Player";
             this.btnSinglePlayer.UseVisualStyleBackColor = false;
@@ -197,7 +207,7 @@
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(403, 180);
+            this.lblState.Location = new System.Drawing.Point(152, 166);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(0, 13);
             this.lblState.TabIndex = 5;
@@ -206,6 +216,98 @@
             // 
             this.p.EnableRaisingEvents = true;
             this.p.SynchronizingObject = this;
+            // 
+            // singlePlayerPanel
+            // 
+            this.singlePlayerPanel.Controls.Add(this.button2);
+            this.singlePlayerPanel.Controls.Add(this.button1);
+            this.singlePlayerPanel.Controls.Add(this.SinglePlayerName);
+            this.singlePlayerPanel.Controls.Add(this.label1);
+            this.singlePlayerPanel.Controls.Add(this.Hard);
+            this.singlePlayerPanel.Controls.Add(this.Medium);
+            this.singlePlayerPanel.Controls.Add(this.Easy);
+            this.singlePlayerPanel.Controls.Add(this.lblState);
+            this.singlePlayerPanel.Location = new System.Drawing.Point(254, 7);
+            this.singlePlayerPanel.Name = "singlePlayerPanel";
+            this.singlePlayerPanel.Size = new System.Drawing.Size(353, 85);
+            this.singlePlayerPanel.TabIndex = 6;
+            this.singlePlayerPanel.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(272, 44);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 33);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(272, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // SinglePlayerName
+            // 
+            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
+            this.SinglePlayerName.Name = "SinglePlayerName";
+            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
+            this.SinglePlayerName.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Player Name";
+            // 
+            // SinglePlayerName
+            // 
+            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
+            this.SinglePlayerName.Name = "SinglePlayerName";
+            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
+            this.SinglePlayerName.TabIndex = 10;
+            // 
+            // Medium
+            // 
+            this.Medium.AutoSize = true;
+            this.Medium.Location = new System.Drawing.Point(90, 48);
+            this.Medium.Name = "Medium";
+            this.Medium.Size = new System.Drawing.Size(62, 17);
+            this.Medium.TabIndex = 7;
+            this.Medium.TabStop = true;
+            this.Medium.Text = "Medium";
+            this.Medium.UseVisualStyleBackColor = true;
+            this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.Easy.AutoSize = true;
+            this.Easy.Location = new System.Drawing.Point(17, 49);
+            this.Easy.Name = "Easy";
+            this.Easy.Size = new System.Drawing.Size(48, 17);
+            this.Easy.TabIndex = 6;
+            this.Easy.TabStop = true;
+            this.Easy.Text = "Easy";
+            this.Easy.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(143, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 
@@ -216,7 +318,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
-            this.Controls.Add(this.lblState);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
             this.Name = "mainForm";
@@ -229,6 +332,8 @@
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
+            this.singlePlayerPanel.ResumeLayout(false);
+            this.singlePlayerPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +355,15 @@
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Button btnReset;
         private System.IO.FileSystemWatcher p;
+        private System.Windows.Forms.Panel singlePlayerPanel;
+        private System.Windows.Forms.RadioButton Hard;
+        private System.Windows.Forms.RadioButton Medium;
+        private System.Windows.Forms.RadioButton Easy;
+        private System.Windows.Forms.TextBox SinglePlayerName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
