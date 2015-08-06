@@ -111,13 +111,13 @@ namespace Tik_Tac_Toe
             //To Do - 
             //      Disable grid,
             //      show reset(Play again) button 
-            /*
+           
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
                 int[] winCells = game.getWinCells();
                 for (int i = 0; i < 3; i++)
                     btns[winCells[i]].BackColor = Color.FromArgb(40,Color.Black);
-
+/*
                 lblResult.Text = "win";
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
@@ -150,8 +150,8 @@ namespace Tik_Tac_Toe
                 if (gameResult1 == DialogResult.No)
                 {
                     game.reset(true);
-            }
-          }*/
+            }*/
+          }
 
             if (game.getWinner() == -1)
             {

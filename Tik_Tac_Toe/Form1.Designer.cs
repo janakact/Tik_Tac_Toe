@@ -162,9 +162,10 @@
             // result
             // 
             this.result.AutoSize = true;
-            this.result.Location = new System.Drawing.Point(404, 139);
+            this.result.Font = new System.Drawing.Font("Jokerman", 8.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.result.Location = new System.Drawing.Point(353, 117);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(35, 13);
+            this.result.Size = new System.Drawing.Size(50, 17);
             this.result.TabIndex = 8;
             this.result.Text = "label2";
             // 
@@ -203,7 +204,7 @@
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPlayer1.Location = new System.Drawing.Point(306, 39);
+            this.lblPlayer1.Location = new System.Drawing.Point(323, 38);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(97, 21);
             this.lblPlayer1.TabIndex = 2;
@@ -215,7 +216,7 @@
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer2.ForeColor = System.Drawing.Color.Brown;
-            this.lblPlayer2.Location = new System.Drawing.Point(306, 59);
+            this.lblPlayer2.Location = new System.Drawing.Point(323, 59);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(62, 21);
             this.lblPlayer2.TabIndex = 3;
