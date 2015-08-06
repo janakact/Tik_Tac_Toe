@@ -37,6 +37,8 @@
             this.btnMultiplayerOffline = new System.Windows.Forms.Button();
             this.btnSinglePlayer = new System.Windows.Forms.Button();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.result = new System.Windows.Forms.Label();
+            this.playAgain = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblPlayer1 = new System.Windows.Forms.Label();
             this.lblPlayer2 = new System.Windows.Forms.Label();
@@ -51,7 +53,6 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
-            this.playAgain = new System.Windows.Forms.Button();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
@@ -144,6 +145,7 @@
             // gamePanel
             // 
             this.gamePanel.BackColor = System.Drawing.Color.Transparent;
+            this.gamePanel.Controls.Add(this.result);
             this.gamePanel.Controls.Add(this.playAgain);
             this.gamePanel.Controls.Add(this.btnReset);
             this.gamePanel.Controls.Add(this.lblPlayer1);
@@ -155,6 +157,30 @@
             this.gamePanel.TabIndex = 1;
             this.gamePanel.Visible = false;
             this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
+            // 
+            // result
+            // 
+            this.result.AutoSize = true;
+            this.result.Location = new System.Drawing.Point(404, 139);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(35, 13);
+            this.result.TabIndex = 8;
+            this.result.Text = "label2";
+            // 
+            // playAgain
+            // 
+            this.playAgain.BackColor = System.Drawing.Color.Transparent;
+            this.playAgain.FlatAppearance.BorderSize = 0;
+            this.playAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playAgain.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.playAgain.Location = new System.Drawing.Point(387, 186);
+            this.playAgain.Name = "playAgain";
+            this.playAgain.Size = new System.Drawing.Size(109, 33);
+            this.playAgain.TabIndex = 7;
+            this.playAgain.Text = "Play Again!";
+            this.playAgain.UseVisualStyleBackColor = false;
+            this.playAgain.Visible = false;
+            this.playAgain.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnReset
             // 
@@ -229,11 +255,12 @@
             this.singlePlayerPanel.Controls.Add(this.Medium);
             this.singlePlayerPanel.Controls.Add(this.Easy);
             this.singlePlayerPanel.Controls.Add(this.lblState);
-            this.singlePlayerPanel.Location = new System.Drawing.Point(254, 7);
+            this.singlePlayerPanel.Location = new System.Drawing.Point(201, 20);
             this.singlePlayerPanel.Name = "singlePlayerPanel";
             this.singlePlayerPanel.Size = new System.Drawing.Size(353, 85);
             this.singlePlayerPanel.TabIndex = 6;
             this.singlePlayerPanel.Visible = false;
+            this.singlePlayerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.singlePlayerPanel_Paint);
             // 
             // button2
             // 
@@ -302,21 +329,6 @@
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
             // 
-            // playAgain
-            // 
-            this.playAgain.BackColor = System.Drawing.Color.Transparent;
-            this.playAgain.FlatAppearance.BorderSize = 0;
-            this.playAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playAgain.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.playAgain.Location = new System.Drawing.Point(387, 186);
-            this.playAgain.Name = "playAgain";
-            this.playAgain.Size = new System.Drawing.Size(109, 33);
-            this.playAgain.TabIndex = 7;
-            this.playAgain.Text = "Play Again!";
-            this.playAgain.UseVisualStyleBackColor = false;
-            this.playAgain.Visible = false;
-            this.playAgain.Click += new System.EventHandler(this.button3_Click);
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +359,7 @@
         }
 
         #endregion
+        private System.Windows.Forms.Panel singlePlayerPanel;
 
         private System.Windows.Forms.Panel homePanel;
         private System.Windows.Forms.Button btnSinglePlayer;
@@ -362,7 +375,6 @@
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Button btnReset;
         private System.IO.FileSystemWatcher p;
-        private System.Windows.Forms.Panel singlePlayerPanel;
         private System.Windows.Forms.RadioButton Hard;
         private System.Windows.Forms.RadioButton Medium;
         private System.Windows.Forms.RadioButton Easy;
@@ -371,6 +383,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button playAgain;
+        private System.Windows.Forms.Label result;
     }
 }
 

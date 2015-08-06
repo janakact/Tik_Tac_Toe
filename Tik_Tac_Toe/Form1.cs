@@ -92,6 +92,11 @@ namespace Tik_Tac_Toe
             lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
 
             // =0 game is going on | =1,-1 wins and =2 draw
+            if (game.getWinner() == 0)
+            {
+                result.Text = "Game is going on....";
+            }
+
             if (game.getWinner() != 0)
             {
                 gameFinished();
@@ -147,7 +152,22 @@ namespace Tik_Tac_Toe
                     game.reset(true);
             }
           }*/
-           
+
+            if (game.getWinner() == -1)
+            {
+                result.Text = game.getPlayer(-1).name + " won!!!";
+                result.ForeColor = System.Drawing.Color.Blue;
+            }
+            if (game.getWinner() == 1)
+            {
+                result.Text = game.getPlayer(1).name + " won!!!";
+                result.ForeColor = System.Drawing.Color.Red;
+            }
+            if (game.getWinner() == 2)
+            {
+               
+                result.Text = "Game is 'Drawn";
+            }
           playAgain.Visible = true;
             
           }
@@ -330,18 +350,28 @@ namespace Tik_Tac_Toe
             game.reset(true);
 
 
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible = false; ;
             gamePanel.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible=false;
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             game.reset(false);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void singlePlayerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 
