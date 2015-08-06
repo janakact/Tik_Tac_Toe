@@ -37,11 +37,6 @@
             this.btnSinglePlayer = new System.Windows.Forms.Button();
             this.gamePanel = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
-            this.lblPlayer1 = new System.Windows.Forms.Label();
-            this.lblPlayer2 = new System.Windows.Forms.Label();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.lblState = new System.Windows.Forms.Label();
-            this.p = new System.IO.FileSystemWatcher();
             this.singlePlayerPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,11 +45,16 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
+            this.lblState = new System.Windows.Forms.Label();
+            this.lblPlayer1 = new System.Windows.Forms.Label();
+            this.lblPlayer2 = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.p = new System.IO.FileSystemWatcher();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
             this.singlePlayerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
             this.SuspendLayout();
             // 
             // homePanel
@@ -144,6 +144,7 @@
             // 
             this.gamePanel.BackColor = System.Drawing.Color.Transparent;
             this.gamePanel.Controls.Add(this.btnReset);
+            this.gamePanel.Controls.Add(this.singlePlayerPanel);
             this.gamePanel.Controls.Add(this.lblPlayer1);
             this.gamePanel.Controls.Add(this.lblPlayer2);
             this.gamePanel.Controls.Add(this.lblResult);
@@ -169,54 +170,6 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // lblPlayer1
-            // 
-            this.lblPlayer1.AutoSize = true;
-            this.lblPlayer1.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPlayer1.Location = new System.Drawing.Point(306, 39);
-            this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(97, 21);
-            this.lblPlayer1.TabIndex = 2;
-            this.lblPlayer1.Text = "Player1 Wins";
-            this.lblPlayer1.Click += new System.EventHandler(this.lblPlayer1_Click);
-            // 
-            // lblPlayer2
-            // 
-            this.lblPlayer2.AutoSize = true;
-            this.lblPlayer2.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.lblPlayer2.ForeColor = System.Drawing.Color.Brown;
-            this.lblPlayer2.Location = new System.Drawing.Point(306, 59);
-            this.lblPlayer2.Name = "lblPlayer2";
-            this.lblPlayer2.Size = new System.Drawing.Size(62, 21);
-            this.lblPlayer2.TabIndex = 3;
-            this.lblPlayer2.Text = "Player2";
-            this.lblPlayer2.Click += new System.EventHandler(this.lblPlayer2_Click);
-            // 
-            // lblResult
-            // 
-            this.lblResult.AutoSize = true;
-            this.lblResult.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(306, 150);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(0, 20);
-            this.lblResult.TabIndex = 4;
-            this.lblResult.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // lblState
-            // 
-            this.lblState.AutoSize = true;
-            this.lblState.Location = new System.Drawing.Point(152, 166);
-            this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(0, 13);
-            this.lblState.TabIndex = 5;
-            // 
-            // p
-            // 
-            this.p.EnableRaisingEvents = true;
-            this.p.SynchronizingObject = this;
-            // 
             // singlePlayerPanel
             // 
             this.singlePlayerPanel.Controls.Add(this.button2);
@@ -227,7 +180,7 @@
             this.singlePlayerPanel.Controls.Add(this.Medium);
             this.singlePlayerPanel.Controls.Add(this.Easy);
             this.singlePlayerPanel.Controls.Add(this.lblState);
-            this.singlePlayerPanel.Location = new System.Drawing.Point(254, 7);
+            this.singlePlayerPanel.Location = new System.Drawing.Point(3, 3);
             this.singlePlayerPanel.Name = "singlePlayerPanel";
             this.singlePlayerPanel.Size = new System.Drawing.Size(353, 85);
             this.singlePlayerPanel.TabIndex = 6;
@@ -269,12 +222,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
-            // SinglePlayerName
+            // Hard
             // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
-            this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
-            this.SinglePlayerName.TabIndex = 10;
+            this.Hard.Location = new System.Drawing.Point(0, 0);
+            this.Hard.Name = "Hard";
+            this.Hard.Size = new System.Drawing.Size(104, 24);
+            this.Hard.TabIndex = 13;
             // 
             // Medium
             // 
@@ -288,7 +241,7 @@
             this.Medium.UseVisualStyleBackColor = true;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // button1
+            // Easy
             // 
             this.Easy.AutoSize = true;
             this.Easy.Location = new System.Drawing.Point(17, 49);
@@ -298,6 +251,54 @@
             this.Easy.TabStop = true;
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
+            // 
+            // lblState
+            // 
+            this.lblState.AutoSize = true;
+            this.lblState.Location = new System.Drawing.Point(152, 166);
+            this.lblState.Name = "lblState";
+            this.lblState.Size = new System.Drawing.Size(0, 13);
+            this.lblState.TabIndex = 5;
+            // 
+            // lblPlayer1
+            // 
+            this.lblPlayer1.AutoSize = true;
+            this.lblPlayer1.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblPlayer1.Location = new System.Drawing.Point(306, 39);
+            this.lblPlayer1.Name = "lblPlayer1";
+            this.lblPlayer1.Size = new System.Drawing.Size(97, 21);
+            this.lblPlayer1.TabIndex = 2;
+            this.lblPlayer1.Text = "Player1 Wins";
+            this.lblPlayer1.Click += new System.EventHandler(this.lblPlayer1_Click);
+            // 
+            // lblPlayer2
+            // 
+            this.lblPlayer2.AutoSize = true;
+            this.lblPlayer2.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.lblPlayer2.ForeColor = System.Drawing.Color.Brown;
+            this.lblPlayer2.Location = new System.Drawing.Point(306, 59);
+            this.lblPlayer2.Name = "lblPlayer2";
+            this.lblPlayer2.Size = new System.Drawing.Size(62, 21);
+            this.lblPlayer2.TabIndex = 3;
+            this.lblPlayer2.Text = "Player2";
+            this.lblPlayer2.Click += new System.EventHandler(this.lblPlayer2_Click);
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.Location = new System.Drawing.Point(306, 150);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 20);
+            this.lblResult.TabIndex = 4;
+            this.lblResult.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // p
+            // 
+            this.p.EnableRaisingEvents = true;
+            this.p.SynchronizingObject = this;
             // 
             // checkBox1
             // 
@@ -316,12 +317,12 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.ruled_paper;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(770, 330);
+            this.ClientSize = new System.Drawing.Size(770, 335);
             this.ControlBox = false;
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
+            this.DoubleBuffered = true;
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
             this.Load += new System.EventHandler(this.mainForm_Load);
@@ -331,11 +332,10 @@
             this.homePanel.ResumeLayout(false);
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
             this.singlePlayerPanel.ResumeLayout(false);
             this.singlePlayerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,7 +363,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
