@@ -81,6 +81,7 @@
             this.btnStop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Informal Roman", 14.25F);
+            this.btnStop.ForeColor = System.Drawing.Color.Red;
             this.btnStop.Location = new System.Drawing.Point(3, 250);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(190, 30);
