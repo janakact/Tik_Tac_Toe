@@ -83,7 +83,6 @@ namespace Tik_Tac_Toe
                 {
                     btns[i].BackgroundImage = btnReset.BackgroundImage;
                     btns[i].FlatAppearance.MouseOverBackColor = mouseMoveBackColor;
-                    btns[i].BackColor = Color.Transparent;
                 }
             }
 
@@ -107,10 +106,7 @@ namespace Tik_Tac_Toe
             //      show reset(Play again) button 
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
-                int[] winCells = game.getWinCells();
-                for (int i = 0; i < 3; i++)
-                    btns[winCells[i]].BackColor = Color.FromArgb(40,Color.Black);
-
+                
                 lblResult.Text = "win";
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
@@ -124,9 +120,7 @@ namespace Tik_Tac_Toe
                 if (gameResult == DialogResult.No)
                 {
                     game.reset(false);
-                }
-
-                
+            }
             }
 
             else
@@ -155,18 +149,18 @@ namespace Tik_Tac_Toe
 
         private void btnSinglePlayer_Click(object sender, EventArgs e)
         {
-            singlePlayerPanel.Visible = true;
+            
             //Grid
-        /*    startForm = new StartForm();
+            startForm = new StartForm();
             // added a event handler to ok button pressed scenario
             startForm.OKPressed += new System.EventHandler(this.singlePlayerOK_Click);
             startForm.ShowDialog();
            
-            */
-        } 
+
+        }
 
         //OK Press listener
-     /*   private void singlePlayerOK_Click(object sender, EventArgs e)   
+        private void singlePlayerOK_Click(object sender, EventArgs e)   
         {
             // i want to choose randomly which player palys first
             Random rand = new Random();
@@ -179,7 +173,7 @@ namespace Tik_Tac_Toe
             gamePanel.Visible = true;
            
         }
-*/
+
 
 
 
@@ -206,16 +200,13 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
-            MultiPlayerOfflinePanel.Visible = true;
-            
-         /*   startForm2 = new StartForm2();
+
+            startForm2 = new StartForm2();
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
-            startForm2.ShowDialog();*/
+            startForm2.ShowDialog();
             
 
         }
-
-        /*
         private void multiPlayerOK_Click(object sender, EventArgs e)
         {
 
@@ -227,7 +218,7 @@ namespace Tik_Tac_Toe
 
             gamePanel.Visible = true;
       
-        } */
+        }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
@@ -280,7 +271,7 @@ namespace Tik_Tac_Toe
         private void mainForm_MouseDown(object sender, MouseEventArgs e)
         {
 
-             _dragging = true;  // _dragging is your variable flag
+            _dragging = true;  // _dragging is your variable flag
             _start_point = new Point(e.X, e.Y);
         }
 
@@ -308,62 +299,6 @@ namespace Tik_Tac_Toe
         {
 
         }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int difficulty = 0;
-            if (Easy.Checked) { difficulty = 0; }
-            if (Medium.Checked) { difficulty = 1;}
-            if (Hard.Checked) { difficulty = 2; } 
-     
-            Random rand = new Random();
-            game = new SinglePlayerGame(SinglePlayerName.Text, rand.Next(0, 2) == 0 ? 1 : -1,difficulty);
-            game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
-
-
-            singlePlayerPanel.Visible = false; ;
-            gamePanel.Visible = true;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            singlePlayerPanel.Visible = false;
-            
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            MultiPlayerOfflinePanel.Visible = false;
-            
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
-            this.game = new MultiplayerOfflineGame(player1Name.Text,player2Name.Text);
-            this.game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
-
-            MultiPlayerOfflinePanel.Visible = false;
-            gamePanel.Visible = true;
-        }
-
-        private void singlePlayerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Hard_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
     }
 }
