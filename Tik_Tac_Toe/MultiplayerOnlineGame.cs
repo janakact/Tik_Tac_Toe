@@ -55,13 +55,14 @@ namespace Tik_Tac_Toe
                 setPlayers(new Player(playerName), new Player("<waiting>"));
             }
 
-            write();
+            write(); // write new game into the file    ;
             listenerThread = new Thread(new ThreadStart(threadListen));
             listenerThread.Start();
         }
 
         public void threadListen()
         {
+            logger.Info("starting reading thread");
             while (!closed)
             {
                 read();
@@ -104,6 +105,7 @@ namespace Tik_Tac_Toe
             }
             catch
             {
+                logger.Fatal("Can't write into the file");
                 return;
             }
         }
@@ -156,6 +158,7 @@ namespace Tik_Tac_Toe
             }
             catch
             {
+                logger.Fatal("Cant read or update the table");
                 return;
             }
         }
