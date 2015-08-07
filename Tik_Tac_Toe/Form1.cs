@@ -155,53 +155,18 @@ namespace Tik_Tac_Toe
 
             singlePlayerPanel.Visible = true;
             gamePanel.Visible = false;
-            //Grid
-        /*    startForm = new StartForm();
-            // added a event handler to ok button pressed scenario
-            startForm.OKPressed += new System.EventHandler(this.singlePlayerOK_Click);
-            startForm.ShowDialog();
-           
-            */
+
         } 
 
-        //OK Press listener
-     /*   private void singlePlayerOK_Click(object sender, EventArgs e)   
-        {
-            // i want to choose randomly which player palys first
-            Random rand = new Random();
-            game = new SinglePlayerGame(this.startForm.singlePlayerName, rand.Next(0,2)==0?1:-1 ,startForm.difficulty);
-            game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
-            startForm.Dispose();
-
-
-            gamePanel.Visible = true;
-           
-        }
-*/
+ 
 
 
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-           
-            // have to show this after game started
-      /*      if (game.getWinner() == 0)
-            {
-                DialogResult result= MessageBox.Show("Current game data will be lost. Are you sure you want to continue!!",
-                    "Reset Warning",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes) 
-                {
-                    game.reset(false);
-                }
-                
-            }
-            else game.reset(false);*/
+ 
             game.reset(true);
-           
+            logger.Info("game reset");
         }
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
@@ -213,23 +178,7 @@ namespace Tik_Tac_Toe
 
             multiPlayerOfflinePanel.Visible = true;
             gamePanel.Visible = false;
-         /*   startForm2 = new StartForm2();
-            startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
-            startForm2.ShowDialog();
-            
 
-        }
-        private void multiPlayerOK_Click(object sender, EventArgs e)
-        {
-
-            this.game = new MultiplayerOfflineGame(startForm2.player1Name, startForm2.player2Name);
-            this.game.Update += new System.EventHandler(this.updateInterface);
-            game.reset(true);
-            startForm2.Dispose();
-
-
-            gamePanel.Visible = true;
-      */
         }
 
         private void mainForm_Load(object sender, EventArgs e)
