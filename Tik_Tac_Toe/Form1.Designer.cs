@@ -90,7 +90,7 @@
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.btnStop.ForeColor = System.Drawing.Color.Red;
-            this.btnStop.Location = new System.Drawing.Point(3, 250);
+            this.btnStop.Location = new System.Drawing.Point(3, 256);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(190, 30);
             this.btnStop.TabIndex = 3;
@@ -108,7 +108,7 @@
             this.btnMultiplayerOnline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOnline.Font = new System.Drawing.Font("Informal Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultiplayerOnline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMultiplayerOnline.Location = new System.Drawing.Point(5, 154);
+            this.btnMultiplayerOnline.Location = new System.Drawing.Point(4, 162);
             this.btnMultiplayerOnline.Name = "btnMultiplayerOnline";
             this.btnMultiplayerOnline.Size = new System.Drawing.Size(190, 31);
             this.btnMultiplayerOnline.TabIndex = 2;
@@ -126,7 +126,7 @@
             this.btnMultiplayerOffline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiplayerOffline.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.btnMultiplayerOffline.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMultiplayerOffline.Location = new System.Drawing.Point(3, 83);
+            this.btnMultiplayerOffline.Location = new System.Drawing.Point(3, 90);
             this.btnMultiplayerOffline.Name = "btnMultiplayerOffline";
             this.btnMultiplayerOffline.Size = new System.Drawing.Size(190, 35);
             this.btnMultiplayerOffline.TabIndex = 1;
@@ -143,7 +143,7 @@
             this.btnSinglePlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnSinglePlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSinglePlayer.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.btnSinglePlayer.Location = new System.Drawing.Point(0, 11);
+            this.btnSinglePlayer.Location = new System.Drawing.Point(0, 19);
             this.btnSinglePlayer.Name = "btnSinglePlayer";
             this.btnSinglePlayer.Size = new System.Drawing.Size(190, 35);
             this.btnSinglePlayer.TabIndex = 0;
@@ -183,7 +183,7 @@
             this.playAgain.FlatAppearance.BorderSize = 0;
             this.playAgain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playAgain.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.playAgain.Location = new System.Drawing.Point(387, 186);
+            this.playAgain.Location = new System.Drawing.Point(387, 184);
             this.playAgain.Name = "playAgain";
             this.playAgain.Size = new System.Drawing.Size(109, 33);
             this.playAgain.TabIndex = 7;
@@ -199,7 +199,7 @@
             this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(80)))));
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Informal Roman", 14.25F);
-            this.btnReset.Location = new System.Drawing.Point(383, 225);
+            this.btnReset.Location = new System.Drawing.Point(383, 232);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(113, 30);
             this.btnReset.TabIndex = 6;
@@ -212,7 +212,7 @@
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblPlayer1.Location = new System.Drawing.Point(323, 38);
+            this.lblPlayer1.Location = new System.Drawing.Point(323, 47);
             this.lblPlayer1.Name = "lblPlayer1";
             this.lblPlayer1.Size = new System.Drawing.Size(97, 21);
             this.lblPlayer1.TabIndex = 2;
@@ -224,7 +224,7 @@
             this.lblPlayer2.AutoSize = true;
             this.lblPlayer2.Font = new System.Drawing.Font("Informal Roman", 14.25F);
             this.lblPlayer2.ForeColor = System.Drawing.Color.Brown;
-            this.lblPlayer2.Location = new System.Drawing.Point(323, 59);
+            this.lblPlayer2.Location = new System.Drawing.Point(323, 72);
             this.lblPlayer2.Name = "lblPlayer2";
             this.lblPlayer2.Size = new System.Drawing.Size(62, 21);
             this.lblPlayer2.TabIndex = 3;
