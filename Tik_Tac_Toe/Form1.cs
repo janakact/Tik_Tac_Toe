@@ -20,7 +20,7 @@ namespace Tik_Tac_Toe
     public partial class mainForm : Form
     {
         Color mouseMoveBackColor = Color.FromArgb(30, Color.Black);
-        private static readonly ILog logger = LogManager.GetLogger(typeof(Game));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(mainForm));
         public mainForm()
         {
             InitializeComponent();
@@ -61,6 +61,7 @@ namespace Tik_Tac_Toe
             this.game.Update += new System.EventHandler(this.updateInterface);
             game.reset(true);
 
+            logger.Info("Game components initiated");
             //TcpClient tcp = new TcpClient();
         } 
 
