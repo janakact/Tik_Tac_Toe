@@ -53,10 +53,18 @@
             this.Hard = new System.Windows.Forms.RadioButton();
             this.Medium = new System.Windows.Forms.RadioButton();
             this.Easy = new System.Windows.Forms.RadioButton();
+            this.multiPlayerOfflinePanel = new System.Windows.Forms.Panel();
+            this.multiPlayerCancel = new System.Windows.Forms.Button();
+            this.multiPlayerOK = new System.Windows.Forms.Button();
+            this.player2Name = new System.Windows.Forms.TextBox();
+            this.player1Name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.homePanel.SuspendLayout();
             this.gamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.p)).BeginInit();
             this.singlePlayerPanel.SuspendLayout();
+            this.multiPlayerOfflinePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // homePanel
@@ -249,6 +257,7 @@
             // 
             // singlePlayerPanel
             // 
+            this.singlePlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.singlePlayerPanel.Controls.Add(this.button2);
             this.singlePlayerPanel.Controls.Add(this.button1);
             this.singlePlayerPanel.Controls.Add(this.SinglePlayerName);
@@ -257,7 +266,7 @@
             this.singlePlayerPanel.Controls.Add(this.Medium);
             this.singlePlayerPanel.Controls.Add(this.Easy);
             this.singlePlayerPanel.Controls.Add(this.lblState);
-            this.singlePlayerPanel.Location = new System.Drawing.Point(201, 20);
+            this.singlePlayerPanel.Location = new System.Drawing.Point(201, 0);
             this.singlePlayerPanel.Name = "singlePlayerPanel";
             this.singlePlayerPanel.Size = new System.Drawing.Size(353, 85);
             this.singlePlayerPanel.TabIndex = 6;
@@ -331,6 +340,75 @@
             this.Easy.Text = "Easy";
             this.Easy.UseVisualStyleBackColor = true;
             // 
+            // multiPlayerOfflinePanel
+            // 
+            this.multiPlayerOfflinePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.multiPlayerOfflinePanel.Controls.Add(this.multiPlayerCancel);
+            this.multiPlayerOfflinePanel.Controls.Add(this.multiPlayerOK);
+            this.multiPlayerOfflinePanel.Controls.Add(this.player2Name);
+            this.multiPlayerOfflinePanel.Controls.Add(this.player1Name);
+            this.multiPlayerOfflinePanel.Controls.Add(this.label3);
+            this.multiPlayerOfflinePanel.Controls.Add(this.label2);
+            this.multiPlayerOfflinePanel.Location = new System.Drawing.Point(202, 87);
+            this.multiPlayerOfflinePanel.Name = "multiPlayerOfflinePanel";
+            this.multiPlayerOfflinePanel.Size = new System.Drawing.Size(353, 67);
+            this.multiPlayerOfflinePanel.TabIndex = 7;
+            this.multiPlayerOfflinePanel.Visible = false;
+            // 
+            // multiPlayerCancel
+            // 
+            this.multiPlayerCancel.Location = new System.Drawing.Point(272, 37);
+            this.multiPlayerCancel.Name = "multiPlayerCancel";
+            this.multiPlayerCancel.Size = new System.Drawing.Size(60, 23);
+            this.multiPlayerCancel.TabIndex = 5;
+            this.multiPlayerCancel.Text = "Cancel";
+            this.multiPlayerCancel.UseVisualStyleBackColor = true;
+            this.multiPlayerCancel.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // multiPlayerOK
+            // 
+            this.multiPlayerOK.Location = new System.Drawing.Point(271, 9);
+            this.multiPlayerOK.Name = "multiPlayerOK";
+            this.multiPlayerOK.Size = new System.Drawing.Size(61, 23);
+            this.multiPlayerOK.TabIndex = 4;
+            this.multiPlayerOK.Text = "OK";
+            this.multiPlayerOK.UseVisualStyleBackColor = true;
+            this.multiPlayerOK.Click += new System.EventHandler(this.multiPlayerOK_Click);
+            // 
+            // player2Name
+            // 
+            this.player2Name.Location = new System.Drawing.Point(86, 38);
+            this.player2Name.Name = "player2Name";
+            this.player2Name.Size = new System.Drawing.Size(155, 20);
+            this.player2Name.TabIndex = 3;
+            // 
+            // player1Name
+            // 
+            this.player1Name.Location = new System.Drawing.Point(86, 11);
+            this.player1Name.Name = "player1Name";
+            this.player1Name.Size = new System.Drawing.Size(155, 20);
+            this.player1Name.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(26, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Player 2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(23, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Player 1";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +418,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(770, 330);
             this.ControlBox = false;
+            this.Controls.Add(this.multiPlayerOfflinePanel);
             this.Controls.Add(this.singlePlayerPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
@@ -356,6 +435,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.p)).EndInit();
             this.singlePlayerPanel.ResumeLayout(false);
             this.singlePlayerPanel.PerformLayout();
+            this.multiPlayerOfflinePanel.ResumeLayout(false);
+            this.multiPlayerOfflinePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -386,6 +467,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button playAgain;
         private System.Windows.Forms.Label result;
+        private System.Windows.Forms.Panel multiPlayerOfflinePanel;
+        private System.Windows.Forms.Button multiPlayerCancel;
+        private System.Windows.Forms.Button multiPlayerOK;
+        private System.Windows.Forms.TextBox player2Name;
+        private System.Windows.Forms.TextBox player1Name;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

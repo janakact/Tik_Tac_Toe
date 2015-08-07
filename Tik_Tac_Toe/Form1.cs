@@ -180,7 +180,12 @@ namespace Tik_Tac_Toe
 
         private void btnSinglePlayer_Click(object sender, EventArgs e)
         {
+            //not showing other buttons
+            btnMultiplayerOnline.Visible = false;
+            btnMultiplayerOffline.Visible = false;
+
             singlePlayerPanel.Visible = true;
+            gamePanel.Visible = false;
             //Grid
         /*    startForm = new StartForm();
             // added a event handler to ok button pressed scenario
@@ -232,8 +237,14 @@ namespace Tik_Tac_Toe
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
+           
+            //not showin other buttons 
+            btnSinglePlayer.Visible = false;
+            btnMultiplayerOnline.Visible = false;
 
-            startForm2 = new StartForm2();
+            multiPlayerOfflinePanel.Visible = true;
+            gamePanel.Visible = false;
+         /*   startForm2 = new StartForm2();
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
             startForm2.ShowDialog();
             
@@ -249,7 +260,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
-      
+      */
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -352,11 +363,17 @@ namespace Tik_Tac_Toe
 
             singlePlayerPanel.Visible = false; ;
             gamePanel.Visible = true;
+
+            btnMultiplayerOnline.Visible = true;
+            btnMultiplayerOffline.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             singlePlayerPanel.Visible=false;
+
+            btnMultiplayerOnline.Visible = true;
+            btnMultiplayerOffline.Visible = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -372,6 +389,27 @@ namespace Tik_Tac_Toe
         private void singlePlayerPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            multiPlayerOfflinePanel.Visible = false;
+
+            btnSinglePlayer.Visible = true;
+            btnMultiplayerOnline.Visible = true;
+        }
+
+        private void multiPlayerOK_Click(object sender, EventArgs e)
+        {
+            this.game = new MultiplayerOfflineGame(player1Name.Text,player2Name.Text);
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+
+            gamePanel.Visible = true;
+            multiPlayerOfflinePanel.Visible = false;
+
+            btnSinglePlayer.Visible = true;
+            btnMultiplayerOnline.Visible =true;
         }
 
 
