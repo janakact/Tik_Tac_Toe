@@ -26,7 +26,7 @@ namespace Tik_Tac_Toe
 
         protected Player[] players = new Player[2];
         private int drawCount = 0;  //Number of drows
-        private int winner = 0; // 0 game is going on,
+        protected int winner = 0; // 0 game is going on,
         public event EventHandler Update;
 
 
