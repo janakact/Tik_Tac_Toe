@@ -247,7 +247,7 @@
             this.lblState.AutoSize = true;
             this.lblState.Location = new System.Drawing.Point(152, 166);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(0, 13);
+            this.lblState.Size = new System.Drawing.Size(0, 12);
             this.lblState.TabIndex = 5;
             // 
             // p
@@ -257,6 +257,8 @@
             // 
             // singlePlayerPanel
             // 
+            this.singlePlayerPanel.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.scroll;
+            this.singlePlayerPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.singlePlayerPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.singlePlayerPanel.Controls.Add(this.button2);
             this.singlePlayerPanel.Controls.Add(this.button1);
@@ -266,82 +268,100 @@
             this.singlePlayerPanel.Controls.Add(this.Medium);
             this.singlePlayerPanel.Controls.Add(this.Easy);
             this.singlePlayerPanel.Controls.Add(this.lblState);
+            this.singlePlayerPanel.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.singlePlayerPanel.Location = new System.Drawing.Point(201, 0);
             this.singlePlayerPanel.Name = "singlePlayerPanel";
-            this.singlePlayerPanel.Size = new System.Drawing.Size(353, 85);
+            this.singlePlayerPanel.Size = new System.Drawing.Size(400, 92);
             this.singlePlayerPanel.TabIndex = 6;
             this.singlePlayerPanel.Visible = false;
             this.singlePlayerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.singlePlayerPanel_Paint);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(272, 44);
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(300, 41);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(61, 33);
             this.button2.TabIndex = 12;
             this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(272, 10);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(300, 9);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(61, 31);
             this.button1.TabIndex = 11;
             this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SinglePlayerName
             // 
-            this.SinglePlayerName.Location = new System.Drawing.Point(87, 15);
+            this.SinglePlayerName.Location = new System.Drawing.Point(128, 11);
             this.SinglePlayerName.Name = "SinglePlayerName";
-            this.SinglePlayerName.Size = new System.Drawing.Size(155, 20);
+            this.SinglePlayerName.Size = new System.Drawing.Size(155, 19);
             this.SinglePlayerName.TabIndex = 10;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 18);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(87, 12);
             this.label1.TabIndex = 9;
             this.label1.Text = "Player Name";
             // 
             // Hard
             // 
-            this.Hard.Location = new System.Drawing.Point(162, 45);
+            this.Hard.BackColor = System.Drawing.Color.Transparent;
+            this.Hard.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hard.Location = new System.Drawing.Point(219, 45);
             this.Hard.Name = "Hard";
-            this.Hard.Size = new System.Drawing.Size(104, 24);
+            this.Hard.Size = new System.Drawing.Size(64, 24);
             this.Hard.TabIndex = 13;
             this.Hard.Text = "Hard";
+            this.Hard.UseVisualStyleBackColor = false;
             // 
             // Medium
             // 
             this.Medium.AutoSize = true;
-            this.Medium.Location = new System.Drawing.Point(90, 48);
+            this.Medium.BackColor = System.Drawing.Color.Transparent;
+            this.Medium.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Medium.Location = new System.Drawing.Point(128, 49);
             this.Medium.Name = "Medium";
-            this.Medium.Size = new System.Drawing.Size(62, 17);
+            this.Medium.Size = new System.Drawing.Size(69, 16);
             this.Medium.TabIndex = 7;
             this.Medium.TabStop = true;
             this.Medium.Text = "Medium";
-            this.Medium.UseVisualStyleBackColor = true;
+            this.Medium.UseVisualStyleBackColor = false;
             this.Medium.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // Easy
             // 
             this.Easy.AutoSize = true;
-            this.Easy.Location = new System.Drawing.Point(17, 49);
+            this.Easy.BackColor = System.Drawing.Color.Transparent;
+            this.Easy.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Easy.Location = new System.Drawing.Point(62, 49);
             this.Easy.Name = "Easy";
-            this.Easy.Size = new System.Drawing.Size(48, 17);
+            this.Easy.Size = new System.Drawing.Size(54, 16);
             this.Easy.TabIndex = 6;
             this.Easy.TabStop = true;
             this.Easy.Text = "Easy";
-            this.Easy.UseVisualStyleBackColor = true;
+            this.Easy.UseVisualStyleBackColor = false;
             // 
             // multiPlayerOfflinePanel
             // 
+            this.multiPlayerOfflinePanel.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.scroll;
+            this.multiPlayerOfflinePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.multiPlayerOfflinePanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.multiPlayerOfflinePanel.Controls.Add(this.multiPlayerCancel);
             this.multiPlayerOfflinePanel.Controls.Add(this.multiPlayerOK);
@@ -351,40 +371,46 @@
             this.multiPlayerOfflinePanel.Controls.Add(this.label2);
             this.multiPlayerOfflinePanel.Location = new System.Drawing.Point(202, 87);
             this.multiPlayerOfflinePanel.Name = "multiPlayerOfflinePanel";
-            this.multiPlayerOfflinePanel.Size = new System.Drawing.Size(353, 67);
+            this.multiPlayerOfflinePanel.Size = new System.Drawing.Size(399, 85);
             this.multiPlayerOfflinePanel.TabIndex = 7;
             this.multiPlayerOfflinePanel.Visible = false;
             // 
             // multiPlayerCancel
             // 
-            this.multiPlayerCancel.Location = new System.Drawing.Point(272, 37);
+            this.multiPlayerCancel.BackColor = System.Drawing.Color.Transparent;
+            this.multiPlayerCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.multiPlayerCancel.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiPlayerCancel.Location = new System.Drawing.Point(300, 42);
             this.multiPlayerCancel.Name = "multiPlayerCancel";
-            this.multiPlayerCancel.Size = new System.Drawing.Size(60, 23);
+            this.multiPlayerCancel.Size = new System.Drawing.Size(60, 33);
             this.multiPlayerCancel.TabIndex = 5;
             this.multiPlayerCancel.Text = "Cancel";
-            this.multiPlayerCancel.UseVisualStyleBackColor = true;
+            this.multiPlayerCancel.UseVisualStyleBackColor = false;
             this.multiPlayerCancel.Click += new System.EventHandler(this.button4_Click);
             // 
             // multiPlayerOK
             // 
-            this.multiPlayerOK.Location = new System.Drawing.Point(271, 9);
+            this.multiPlayerOK.BackColor = System.Drawing.Color.Transparent;
+            this.multiPlayerOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.multiPlayerOK.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiPlayerOK.Location = new System.Drawing.Point(299, 8);
             this.multiPlayerOK.Name = "multiPlayerOK";
-            this.multiPlayerOK.Size = new System.Drawing.Size(61, 23);
+            this.multiPlayerOK.Size = new System.Drawing.Size(61, 31);
             this.multiPlayerOK.TabIndex = 4;
             this.multiPlayerOK.Text = "OK";
-            this.multiPlayerOK.UseVisualStyleBackColor = true;
+            this.multiPlayerOK.UseVisualStyleBackColor = false;
             this.multiPlayerOK.Click += new System.EventHandler(this.multiPlayerOK_Click);
             // 
             // player2Name
             // 
-            this.player2Name.Location = new System.Drawing.Point(86, 38);
+            this.player2Name.Location = new System.Drawing.Point(110, 37);
             this.player2Name.Name = "player2Name";
             this.player2Name.Size = new System.Drawing.Size(155, 20);
             this.player2Name.TabIndex = 3;
             // 
             // player1Name
             // 
-            this.player1Name.Location = new System.Drawing.Point(86, 11);
+            this.player1Name.Location = new System.Drawing.Point(110, 11);
             this.player1Name.Name = "player1Name";
             this.player1Name.Size = new System.Drawing.Size(155, 20);
             this.player1Name.TabIndex = 2;
@@ -392,20 +418,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(26, 45);
+            this.label3.Location = new System.Drawing.Point(35, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(61, 12);
             this.label3.TabIndex = 1;
             this.label3.Text = "Player 2";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("SketchFlow Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(23, 14);
+            this.label2.Location = new System.Drawing.Point(35, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(57, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "Player 1";
             // 
