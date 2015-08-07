@@ -119,40 +119,7 @@ namespace Tik_Tac_Toe
                 int[] winCells = game.getWinCells();
                 for (int i = 0; i < 3; i++)
                     btns[winCells[i]].BackColor = Color.FromArgb(40,Color.Black);
-/*
-                lblResult.Text = "win";
-                DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
-                                                         "Game Result",
-                                                         MessageBoxButtons.YesNo,
-                                                         MessageBoxIcon.Information
-                                                          );
-                if (gameResult == DialogResult.Yes)
-                {
-                    game.reset(false);
-                }
-                if (gameResult == DialogResult.No)
-                {
-                    game.reset(false);
-                }
 
-                
-            }
-
-            else
-            { 
-                DialogResult gameResult1 = MessageBox.Show("Game is Drawn \n \n Do you want to continue this game session?",
-                                                         "Game Result",
-                                                         MessageBoxButtons.YesNo,//convert this into continue & start new session
-                                                         MessageBoxIcon.Information
-                                                          );
-                if (gameResult1 == DialogResult.Yes)
-                {
-                    game.reset(false);
-                }
-                if (gameResult1 == DialogResult.No)
-                {
-                    game.reset(true);
-            }*/
           }
 
             if (game.getWinner() == -1)

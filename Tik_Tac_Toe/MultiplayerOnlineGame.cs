@@ -150,6 +150,8 @@ namespace Tik_Tac_Toe
                     isNetworkMove = false;
                 else
                     isNetworkMove = true;
+                winner = 0;
+                updatePointsAndCalculateWinner();
                 callUpdate();
             }
             catch
