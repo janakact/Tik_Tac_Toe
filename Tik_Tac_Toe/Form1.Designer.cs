@@ -453,6 +453,7 @@
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.homePanel);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "mainForm";
             this.Text = "Tik Tac Toe";
             this.Load += new System.EventHandler(this.mainForm_Load);
