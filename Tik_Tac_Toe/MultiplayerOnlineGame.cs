@@ -36,6 +36,7 @@ namespace Tik_Tac_Toe
 
         public MultiplayerOnlineGame(String path, String playerName, bool isRed):base()
         {
+            state = Game.WaitingForConnection;
             if (isRed)
             {
                 isNetworkMove = true;
@@ -129,8 +130,11 @@ namespace Tik_Tac_Toe
                     getPlayer(1).points = int.Parse(arr[4]);
                 }
 
-                if (arr[1] != "<waiting>" && arr[3] != "<waiting>") configuredConnection = true;
-
+                if (arr[1] != "<waiting>" && arr[3] != "<waiting>")
+                {
+                    configuredConnection = true;
+                    state = Game.GoingOn;
+                }
 
                 if (!configuredConnection) return;
                // if (!isNetworkMove ) return;

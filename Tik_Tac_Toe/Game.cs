@@ -166,6 +166,7 @@ namespace Tik_Tac_Toe
         //Mark the move of the playerId
         protected void updateMove(int row, int col, int playerId)
         {
+            if (getWinner() != 0) return;
             logger.Info("Move updated row:" + row + " col:" + col + " playerId:" + playerId);
             //if(getWinner==)
             table[row, col] = playerId;

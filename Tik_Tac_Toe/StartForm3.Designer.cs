@@ -40,7 +40,7 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(15, 106);
+            this.txtPath.Location = new System.Drawing.Point(47, 115);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(300, 20);
             this.txtPath.TabIndex = 0;
@@ -50,11 +50,11 @@
             // 
             this.btnOK.BackColor = System.Drawing.Color.Transparent;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(159, 132);
+            this.btnOK.Location = new System.Drawing.Point(191, 141);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Connect";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -62,7 +62,7 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(240, 132);
+            this.btnCancel.Location = new System.Drawing.Point(272, 141);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(13, 90);
+            this.label1.Location = new System.Drawing.Point(45, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(83, 15);
+            this.txtName.Location = new System.Drawing.Point(115, 24);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(234, 20);
             this.txtName.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(13, 18);
+            this.label2.Location = new System.Drawing.Point(45, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.btnRed.AutoSize = true;
             this.btnRed.BackColor = System.Drawing.Color.Transparent;
             this.btnRed.Checked = true;
-            this.btnRed.Location = new System.Drawing.Point(16, 56);
+            this.btnRed.Location = new System.Drawing.Point(48, 65);
             this.btnRed.Name = "btnRed";
             this.btnRed.Size = new System.Drawing.Size(45, 17);
             this.btnRed.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             this.btnBlue.AutoSize = true;
             this.btnBlue.BackColor = System.Drawing.Color.Transparent;
-            this.btnBlue.Location = new System.Drawing.Point(159, 56);
+            this.btnBlue.Location = new System.Drawing.Point(191, 65);
             this.btnBlue.Name = "btnBlue";
             this.btnBlue.Size = new System.Drawing.Size(46, 17);
             this.btnBlue.TabIndex = 7;
@@ -129,7 +129,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 167);
+            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.scroll;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(396, 194);
             this.Controls.Add(this.btnBlue);
             this.Controls.Add(this.btnRed);
             this.Controls.Add(this.label2);
@@ -138,6 +140,8 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPath);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartForm3";
             this.Text = "Connect To the server";
             this.Load += new System.EventHandler(this.StartForm3_Load);

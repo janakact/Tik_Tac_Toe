@@ -42,7 +42,7 @@ namespace Tik_Tac_Toe
             {
                 btns[i] = new System.Windows.Forms.Button();
                 this.gamePanel.Controls.Add(btns[i]);
-                this.btns[i].Location = new System.Drawing.Point((i % 3) * 100, (i / 3) *100);
+                this.btns[i].Location = new System.Drawing.Point((i % 3) * 110, (i / 3) *100);
                 this.btns[i].Name = "btn" + i;
                 this.btns[i].Size = new System.Drawing.Size(90, 90);
                 this.btns[i].TabIndex = i+3;
@@ -86,16 +86,24 @@ namespace Tik_Tac_Toe
                     btns[i].BackColor = Color.Transparent;
                 }
             }
-
+            playAgain.Visible = false;
             //Increase marks
             lblPlayer1.Text = game.getPlayer(-1).name + " has " + game.getPlayer(-1).points + " points " ;
             lblPlayer2.Text = game.getPlayer(1).name + " has " + game.getPlayer(1).points + " points ";
 
             // =0 game is going on | =1,-1 wins and =2 draw
+            if (game.getWinner() == 0)
+            {
+
+                result.Text = "Game is going on....";
+                if (game.getState() == Game.WaitingForConnection) result.Text = "Connecting...";
+            }
+
             if (game.getWinner() != 0)
             {
                 gameFinished();
             }
+
         }
 
         private void gameFinished() //To Ravindu
@@ -105,12 +113,13 @@ namespace Tik_Tac_Toe
             //To Do - 
             //      Disable grid,
             //      show reset(Play again) button 
+           
             if (game.getWinner()==1 || game.getWinner()==-1)
             {
                 int[] winCells = game.getWinCells();
                 for (int i = 0; i < 3; i++)
                     btns[winCells[i]].BackColor = Color.FromArgb(40,Color.Black);
-
+/*
                 lblResult.Text = "win";
                 DialogResult gameResult = MessageBox.Show("WINNER is : " + game.getPlayer(game.getWinner()).name + "\n \n Do u want to continue this game session? \n",
                                                          "Game Result",
@@ -143,8 +152,26 @@ namespace Tik_Tac_Toe
                 if (gameResult1 == DialogResult.No)
                 {
                     game.reset(true);
-            }
+            }*/
           }
+
+            if (game.getWinner() == -1)
+            {
+                result.Text = game.getPlayer(-1).name + " won!!!";
+                result.ForeColor = System.Drawing.Color.Blue;
+            }
+            if (game.getWinner() == 1)
+            {
+                result.Text = game.getPlayer(1).name + " won!!!";
+                result.ForeColor = System.Drawing.Color.Red;
+            }
+            if (game.getWinner() == 2)
+            {
+               
+                result.Text = "Game is 'Drawn";
+            }
+          playAgain.Visible = true;
+            
           }
 
         private void btn_Click(object sender, EventArgs e)
@@ -155,7 +182,12 @@ namespace Tik_Tac_Toe
 
         private void btnSinglePlayer_Click(object sender, EventArgs e)
         {
+            //not showing other buttons
+            btnMultiplayerOnline.Visible = false;
+            btnMultiplayerOffline.Visible = false;
+
             singlePlayerPanel.Visible = true;
+            gamePanel.Visible = false;
             //Grid
         /*    startForm = new StartForm();
             // added a event handler to ok button pressed scenario
@@ -187,7 +219,7 @@ namespace Tik_Tac_Toe
         {
            
             // have to show this after game started
-            if (game.getWinner() == 0)
+      /*      if (game.getWinner() == 0)
             {
                 DialogResult result= MessageBox.Show("Current game data will be lost. Are you sure you want to continue!!",
                     "Reset Warning",
@@ -200,14 +232,21 @@ namespace Tik_Tac_Toe
                 }
                 
             }
-            else game.reset(false);
+            else game.reset(false);*/
+            game.reset(true);
            
         }
 
         private void btnMultiplayerOffline_Click(object sender, EventArgs e)// add a window to enter name, select difficulty
         {
+           
+            //not showin other buttons 
+            btnSinglePlayer.Visible = false;
+            btnMultiplayerOnline.Visible = false;
 
-            startForm2 = new StartForm2();
+            multiPlayerOfflinePanel.Visible = true;
+            gamePanel.Visible = false;
+         /*   startForm2 = new StartForm2();
             startForm2.OKPressed += new System.EventHandler(this.multiPlayerOK_Click);
             startForm2.ShowDialog();
             
@@ -223,7 +262,7 @@ namespace Tik_Tac_Toe
 
 
             gamePanel.Visible = true;
-      
+      */
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -324,13 +363,55 @@ namespace Tik_Tac_Toe
             game.reset(true);
 
 
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible = false; ;
             gamePanel.Visible = true;
+
+            btnMultiplayerOnline.Visible = true;
+            btnMultiplayerOffline.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            singlePlayerPanel.Dispose();
+            singlePlayerPanel.Visible=false;
+
+            btnMultiplayerOnline.Visible = true;
+            btnMultiplayerOffline.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            game.reset(false);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void singlePlayerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            multiPlayerOfflinePanel.Visible = false;
+
+            btnSinglePlayer.Visible = true;
+            btnMultiplayerOnline.Visible = true;
+        }
+
+        private void multiPlayerOK_Click(object sender, EventArgs e)
+        {
+            this.game = new MultiplayerOfflineGame(player1Name.Text,player2Name.Text);
+            this.game.Update += new System.EventHandler(this.updateInterface);
+            game.reset(true);
+
+            gamePanel.Visible = true;
+            multiPlayerOfflinePanel.Visible = false;
+
+            btnSinglePlayer.Visible = true;
+            btnMultiplayerOnline.Visible =true;
         }
 
 

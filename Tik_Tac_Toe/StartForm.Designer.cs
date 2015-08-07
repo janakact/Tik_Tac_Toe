@@ -118,7 +118,6 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(29, 126);
             this.button1.Name = "button1";
@@ -130,7 +129,6 @@
             // 
             // button2
             // 
-            this.button2.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(149, 126);
             this.button2.Name = "button2";
@@ -144,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Tik_Tac_Toe.Properties.Resources.wood;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(250, 161);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
