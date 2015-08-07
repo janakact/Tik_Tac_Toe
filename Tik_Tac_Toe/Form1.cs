@@ -94,7 +94,9 @@ namespace Tik_Tac_Toe
             // =0 game is going on | =1,-1 wins and =2 draw
             if (game.getWinner() == 0)
             {
+
                 result.Text = "Game is going on....";
+                if (game.getState() == Game.WaitingForConnection) result.Text = "Connecting...";
             }
 
             if (game.getWinner() != 0)
