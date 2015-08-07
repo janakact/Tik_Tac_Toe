@@ -37,6 +37,7 @@ namespace Tik_Tac_Toe
         public MultiplayerOnlineGame(String path, String playerName, bool isRed):base()
         {
             state = Game.WaitingForConnection;
+            winner = 0;
             if (isRed)
             {
                 isNetworkMove = true;
